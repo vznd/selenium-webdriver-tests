@@ -16,6 +16,12 @@ public class HomePage extends BasePage {
     @FindBy(css = "div[lang='en'] a")
     public WebElement enMainPageLink;
 
+    @FindBy(css = "button[type='submit']")
+    public WebElement searchButton;
+
+    @FindBy(css = "input[id='searchInput']")
+    public WebElement searchInputField;
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this); // init elements by annotation FindBy
@@ -34,6 +40,16 @@ public class HomePage extends BasePage {
     public EnMainPage clickEnMainPageLink() {
         enMainPageLink.click();
         return new EnMainPage(driver);
+    }
+
+    public HomePage enterTextToSearchInputField(String searchQuery) {
+        searchInputField.sendKeys(searchQuery);
+        return this;
+    }
+
+    public ArticlePage clickSearchButton() {
+        searchButton.click();
+        return new ArticlePage(driver);
     }
 
 }
