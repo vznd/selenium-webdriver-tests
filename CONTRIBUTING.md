@@ -1,9 +1,9 @@
-# Welcome to wikipedia-tests contributing guide
+# Welcome to selenium-webdriver-tests contributing guide
 
 Thank you for investing your time in contributing to our project! In this guide you will get an overview of the 
 contribution workflow from naming your branch, commit message, creating a PR, reviewing, and merging the PR.
 
-To get an overview of the project, read the [README](https://github.com/vznd/wikipedia-tests/blob/master/README.md).
+To get an overview of the project, read the [README](https://github.com/vznd/selenium-webdriver-tests/blob/master/README.md).
 
 
 ## Workflow

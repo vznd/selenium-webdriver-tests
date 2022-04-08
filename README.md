@@ -1,6 +1,6 @@
-# Wikipedia Tests
+# Selenium Web Driver Tests
   
-[![CircleCI](https://circleci.com/bb/den44/wikipedia-tests.svg?style=shield&circle-token=beec6688d1137f803b984f0bd3564ba6caaeeb9b)](https://app.circleci.com/pipelines/bitbucket/den44/wikipedia-tests?branch=master&filter=all)
+[![CircleCI](https://circleci.com/bb/den44/wikipedia-tests.svg?style=shield&circle-token=beec6688d1137f803b984f0bd3564ba6caaeeb9b)](https://app.circleci.com/pipelines/bitbucket/den44/selenium-webdriver-tests?branch=master&filter=all)
 
 This repository includes selenium tests examples using [wikipedia.org](https://www.wikipedia.org/).
 
