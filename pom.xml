@@ -44,8 +44,11 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <webdriver.chrome.driver>/usr/local/bin/chromedriver</webdriver.chrome.driver>
+                        <webdriver.chrome.driver>/tmp/chromedriver/chromedriver</webdriver.chrome.driver>
                     </systemPropertyVariables>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>

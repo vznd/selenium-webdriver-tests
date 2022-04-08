@@ -1,0 +1,48 @@
+version: 2.1
+
+jobs:
+
+  test:
+    docker:
+      - image: maven:3.8.5-openjdk-17-slim
+
+    environment:
+      CHROMEDRIVER_VERSION: 100.0.4896.60
+      CHROMEDRIVER_DIR: /tmp/chromedriver/
+      WIKI_ENV: CIRCLE_CI
+
+    steps:
+      - checkout
+      - run:
+          name: "Install gnupg2, wget, xvfb and unzip"
+          command: |
+            apt-get update
+            apt-get install -y gnupg2
+            apt-get install -y wget xvfb unzip
+      - run:
+          name: "Install Chrome Browser"
+          command: |
+            wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+            echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+            apt-get update -y
+            apt-get install -y google-chrome-stable
+      - run:
+          name: "Setup chromedriver"
+          command: |
+            mkdir -p $CHROMEDRIVER_DIR
+            wget -q --continue -P $CHROMEDRIVER_DIR "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+            unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
+            export PATH=$CHROMEDRIVER_DIR:$PATH
+      - run:
+          name: "Run tests"
+          command: mvn test
+      - store_test_results:
+          path: target/surefire-reports/junitreports
+      - store_artifacts:
+          path: target/surefire-reports/junitreports
+          destination: circleci-docs
+
+workflows:
+  test-workflow:
+    jobs:
+      - test

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Wiki Tests" parallel="false">
+    <test name="Navigate to Main Page">
+        <classes>
+            <class name="wiki.navigation.NavigateToMainPageTest"/>
+        </classes>
+    </test>
+    <test name="Search From Home Page">
+        <classes>
+            <class name="wiki.search.SearchFromHomePage"/>
+        </classes>
+    </test>
+</suite>
