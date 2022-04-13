@@ -19,6 +19,7 @@ This repository includes selenium tests examples using [wikipedia.org](https://w
     * [Frames](#frames)
     * [Windows](#windows)
     * [Elements](#elements)
+    * [Waits](#waits)
 
 ## Run tests
 
@@ -576,4 +577,122 @@ List<WebElement> allAvailableOptions = selectObject.getOptions();
 * [To cover] Check if multiple options are selected
 ```java
 Boolean doesThisAllowMultipleSelections = selectObject.isMultiple();
+```
+
+### Waits
+
+Waiting is having the automated task execution elapse a certain amount of time before continuing with the next step.
+To overcome the problem of race conditions between the browser and your WebDriver script, most Selenium clients ship 
+with a wait package. When employing a wait, you are using what is commonly referred to as an explicit wait.
+
+**Explicit wait:**
+
+Explicit waits allow your code to pause a program execution, until the condition you pass it resolves. The condition is 
+called with a certain frequency until the timeout of the wait is elapsed.
+
+* [To cover] Initialize a WebDriverWait
+```java
+WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+```
+
+* [To cover] Wait until element becomes clickable
+```java
+wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a/h3"));  
+```
+
+* [To cover] Wait until element is found and store it to a variable
+```java
+WebElement element = new WebDriverWait(driver, Duration.ofSeconds(3))
+          .until(driver -> driver.findElement(By.name("q")));
+```
+
+**Expected conditions:**
+
+| Method                                                                                    | Description                                                                                              |
+|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| alertIsPresent()                                                                          | An expectation for checking Alert to present on the page                                                 |
+| and(ExpectedCondition<?>... conditions)                                                   | An expectation with the logical and condition of the given list of conditions                            |
+| attributeContains(By locator, java.lang.String attribute, java.lang.String value)         | An expectation for checking WebElement with given locator has attribute which contains specific value    |
+| attributeContains(WebElement element, java.lang.String attribute, java.lang.String value) | An expectation for checking WebElement with given locator has attribute which contains specific value    |
+| attributeToBe(By locator, java.lang.String attribute, java.lang.String value)             | An expectation for checking WebElement with given locator has attribute with a specific value            |
+| attributeToBe(WebElement element, java.lang.String attribute, java.lang.String value)     | An expectation for checking given WebElement has attribute with a specific value                         |
+| attributeToBeNotEmpty(WebElement element, java.lang.String attribute                      | An expectation for checking WebElement any non empty value for given attribute                           |
+| domAttributeToBe(WebElement element, java.lang.String attribute, java.lang.String value)  | An expectation for checking given WebElement has DOM attribute with a specific value                     |
+| domPropertyToBe(WebElement element, java.lang.String property, java.lang.String value)    | An expectation for checking given WebElement has DOM property with a specific value                      |
+| elementSelectionStateToBe(By locator, boolean selected)                                   | An expectation for checking if the given element is selected                                             |
+| elementSelectionStateToBe(WebElement element, boolean selected)                           | An expectation for checking if the given element is selected                                             |
+| elementToBeClickable(By locator)                                                          | An expectation for checking an element is visible and enabled such that you can click it                 |
+| elementToBeClickable(WebElement element)                                                  | An expectation for checking an element is visible and enabled such that you can click it                 |
+| elementToBeSelected(By locator)                                                           | An expectation for checking if the given element is selected                                             |
+| elementToBeSelected(WebElement element)                                                   | An expectation for checking if the given element is selected                                             |
+| frameToBeAvailableAndSwitchToIt(int frameLocator)                                         | An expectation for checking whether the given frame is available to switch to                            |
+| frameToBeAvailableAndSwitchToIt(java.lang.String frameLocator)                            | An expectation for checking whether the given frame is available to switch to                            |
+| frameToBeAvailableAndSwitchToIt(By locator)                                               | An expectation for checking whether the given frame is available to switch to                            |
+| frameToBeAvailableAndSwitchToIt(WebElement frameLocator)                                  | An expectation for checking whether the given frame is available to switch to                            |
+| invisibilityOf(WebElement element)                                                        | An expectation for checking the element to be invisible                                                  |
+| invisibilityOfAllElements(java.util.List<WebElement> elements)                            | An expectation for checking all elements from given list to be invisible                                 |
+| invisibilityOfAllElements(WebElement... elements)                                         | An expectation for checking all elements from given list to be invisible                                 |
+| invisibilityOfElementLocated(By locator)                                                  | An expectation for checking that an element is either invisible or not present on the DOM                |
+| invisibilityOfElementWithText(By locator, java.lang.String text)                          | An expectation for checking that an element with text is either invisible or not present on the DOM      |
+| javaScriptThrowsNoExceptions(java.lang.String javaScript)                                 | An expectation to check if js executable                                                                 |
+| jsReturnsValue(java.lang.String javaScript)                                               | An expectation for String value from javascript                                                          |
+| not(ExpectedCondition<?> condition)                                                       | An expectation with the logical opposite condition of the given condition                                |
+| numberOfElementsToBe(By locator, java.lang.Integer number)                                | An expectation for checking number of WebElements with given locator                                     |
+| numberOfElementsToBeLessThan(By locator, java.lang.Integer number)                        | An expectation for checking number of WebElements with given locator being less than defined number      |
+| numberOfElementsToBeMoreThan(By locator, java.lang.Integer number)                        | An expectation for checking number of WebElements with given locator being more than defined number      |
+| numberOfWindowsToBe(int expectedNumberOfWindows)                                          | An expectation for checking number of Windows opened in a current session                                |
+| or(ExpectedCondition<?>... conditions)                                                    | An expectation with the logical or condition of the given list of conditions                             |
+| presenceOfAllElementsLocatedBy(By locator)                                                | An expectation for checking that there is at least one element present on a web page                     |
+| presenceOfElementLocated(By locator)                                                      | An expectation for checking that an element is present on the DOM of a page                              |
+| presenceOfNestedElementLocatedBy(By locator, By childLocator)                             | An expectation for checking child WebElement as a part of parent element to present                      |
+| presenceOfNestedElementLocatedBy(WebElement element, By childLocator)                     | An expectation for checking child WebElement as a part of parent element to be present                   |
+| presenceOfNestedElementsLocatedBy(By parent, By childLocator)                             | An expectation for checking child WebElement as a part of parent element to present                      |
+| refreshed(ExpectedCondition<T> condition)                                                 | Wrapper for a condition, which allows for elements to update by redrawing                                |
+| stalenessOf(WebElement element)                                                           | Wait until an element is no longer attached to the DOM                                                   |
+| textMatches(By locator, java.util.regex.Pattern pattern)                                  | An expectation for checking WebElement with given locator has text with a value as a part of it          |
+| textToBe(By locator, java.lang.String value)                                              | An expectation for checking WebElement with given locator has specific text                              |
+| textToBePresentInElement(WebElement element, java.lang.String text)                       | An expectation for checking if the given text is present in the specified element                        |
+| textToBePresentInElementLocated(By locator, java.lang.String text)                        | An expectation for checking if the given text is present in the element that matches the given locator   |
+| textToBePresentInElementValue(By locator, java.lang.String text)                          | An expectation for checking if the given text is present in the specified elements value attribute       |
+| textToBePresentInElementValue(WebElement element, java.lang.String text)                  | An expectation for checking if the given text is present in the specified elements value attribute       |
+| titleContains(java.lang.String title)                                                     | An expectation for checking that the title contains a case-sensitive substring                           |
+| titleIs(java.lang.String title)                                                           | An expectation for checking the title of a page                                                          |
+| urlContains(java.lang.String fraction)                                                    | An expectation for the URL of the current page to contain specific text                                  |
+| urlMatches(java.lang.String regex)                                                        | Expectation for the URL to match a specific regular expression                                           |
+| urlToBe(java.lang.String url)                                                             | An expectation for the URL of the current page to be a specific url                                      |
+| visibilityOf(WebElement element)                                                          | An expectation for checking that an element, known to be present on the DOM of a page, is visible        |
+| visibilityOfAllElements(java.util.List<WebElement> elements)                              | An expectation for checking that all elements present on the web page that match the locator are visible |
+| visibilityOfAllElements(WebElement... elements)                                           | An expectation for checking that all elements present on the web page that match the locator are visible |
+| visibilityOfAllElementsLocatedBy(By locator)                                              | An expectation for checking that all elements present on the web page that match the locator are visible |
+| visibilityOfElementLocated(By locator)                                                    | An expectation for checking that an element is present on the DOM of a page and visible                  |
+| visibilityOfNestedElementsLocatedBy(By parent, By childLocator)                           | An expectation for checking child WebElement as a part of parent element to be visible                   |
+| visibilityOfNestedElementsLocatedBy(WebElement element, By childLocator)                  | An expectation for checking child WebElement as a part of parent element to be visible                   |
+
+**Implicit wait:**
+
+By implicitly waiting, WebDriver polls the DOM for a certain duration when trying to find any element.
+
+* [To cover] Implicit wait
+```java
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+```
+
+**Fluent wait:**
+
+FluentWait instance defines the maximum amount of time to wait for a condition, as well as the frequency with which to 
+check the condition. Users may configure the wait to ignore specific types of exceptions whilst waiting, 
+such as NoSuchElementException when searching for an element on the page.
+
+* [To cover] Waiting 30 seconds for an element to be present on the page, checking for its presence once every 5 seconds
+```java
+Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+        .withTimeout(Duration.ofSeconds(30))
+        .pollingEvery(Duration.ofSeconds(5))
+        .ignoring(NoSuchElementException.class);
+
+WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+    public WebElement apply(WebDriver driver) {
+        return driver.findElement(By.id("foo"));
+    }
+});
 ```
