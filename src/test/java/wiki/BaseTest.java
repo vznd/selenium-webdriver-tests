@@ -3,16 +3,25 @@ package wiki;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import java.time.Duration;
 
 public class BaseTest {
 
     public WebDriver driver;
+    public WebDriverWait wait;
+    public String username;
+    public String password;
 
     @BeforeMethod
-    public void initDriver() {
+    public void setup() {
         driver = new ChromeDriver(getChromeOptions());
+        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        username = "Username12340";
+        password = "Qazxc123";
     }
 
     @AfterMethod

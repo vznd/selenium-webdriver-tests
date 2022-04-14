@@ -33,7 +33,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage assertCentralLogoImgIsDisplayed() {
-        Assert.assertTrue(centralLogoImg.isDisplayed());
+        Assert.assertTrue(centralLogoImg.isDisplayed(), "The central logo image was not displayed!");
         return this;
     }
 
