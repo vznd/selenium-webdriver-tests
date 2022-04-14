@@ -20,6 +20,7 @@ This repository includes selenium tests examples using [wikipedia.org](https://w
     * [Windows](#windows)
     * [Elements](#elements)
     * [Waits](#waits)
+    * [Actions API](#actions-api)
 
 ## Run tests
 
@@ -695,4 +696,104 @@ WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
         return driver.findElement(By.id("foo"));
     }
 });
+```
+
+### Actions API
+
+Unlike the high-level element interactions, which conducts additional validations, the Actions API provides granular 
+control over input devices. Selenium provides access to 3 input sources: key inputs for keyboard devices, pointer 
+inputs for a mouse, pen or touch device, and a wheel inputs for scroll wheel support.
+
+**Keyboard:**
+
+* [To cover] Enter a "webdriver" text and perform "ENTER" keyboard action
+```java
+driver.findElement(By.name("q")).sendKeys("webdriver" + Keys.ENTER);
+```
+
+* [To cover] Perform "ENTER" keyboard action using Actions object
+```java
+Actions action = new Actions(driver);
+action.sendKeys(Keys.ENTER).perform();
+```
+
+* [To cover] Enters text "qwerty" with keyDown SHIFT key and after keyUp SHIFT key (QWERTYqwerty)
+```java
+Actions action = new Actions(driver);
+WebElement search = driver.findElement(By.name("q"));
+action.keyDown(Keys.SHIFT).sendKeys(search,"qwerty").keyUp(Keys.SHIFT).sendKeys("qwerty").perform();
+```
+
+**Mouse:**
+
+* [To cover] **Click and hold** mouse
+```java
+WebElement searchBtn = driver.findElement(By.linkText("Sign in"));
+Actions actionProvider = new Actions(driver);
+actionProvider.clickAndHold(searchBtn).build().perform();
+```
+
+* [To cover] **Right click** on element
+```java
+WebElement searchBtn = driver.findElement(By.linkText("Sign in"));
+Actions actionProvider = new Actions(driver);
+actionProvider.contextClick(searchBtn).build().perform();
+```
+
+* [To cover] **Double click** on element
+```java
+WebElement searchBtn = driver.findElement(By.linkText("Sign in"));
+Actions actionProvider = new Actions(driver);
+actionProvider.doubleClick(searchBtn).build().perform();
+```
+
+* [To cover] **Move to element** - scroll to a view where element is located and move mouse cursor to a middle of this element
+```java
+WebElement gmailLink = driver.findElement(By.linkText("Gmail"));
+Actions actionProvider = new Actions(driver);
+actionProvider.moveToElement(gmailLink).build().perform();
+```
+
+* [To cover] **Move by offset** - move the mouse from its current position (or 0,0) to the element
+```java
+// Store 'Gmail' anchor web element
+WebElement gmailLink = driver.findElement(By.linkText("Gmail"));
+
+// Capture x and y offset positions of element
+int xOffset = gmailLink.getRect().getX();
+int yOffset = gmailLink.getRect().getY();
+
+Actions actionProvider = new Actions(driver);
+// Performs mouse move action onto the offset position
+actionProvider.moveByOffset(xOffset, yOffset).build().perform();
+```
+
+* [To cover] **DragAndDrop** - click and hold the source element, move to the location of the target element and then releases the mouse
+```java
+WebElement sourceEle = driver.findElement(By.id("draggable"));
+WebElement targetEle = driver.findElement(By.id("droppable"));
+Actions actionProvider = new Actions(driver);
+actionProvider.dragAndDrop(sourceEle, targetEle).build().perform();
+```
+
+* [To cover] **DragAndDropBy** - click and hold the source element, move to the location of the given offset and then releases the mouse
+```java
+WebElement sourceEle = driver.findElement(By.id("draggable"));
+WebElement targetEle = driver.findElement(By.id("droppable"));
+int targetEleXOffset = targetEle.getLocation().getX();
+int targetEleYOffset = targetEle.getLocation().getY();
+
+Actions actionProvider = new Actions(driver);
+actionProvider.dragAndDropBy(sourceEle, targetEleXOffset, targetEleYOffset).build().perform();
+``` 
+
+* [To cover] **Release** - releases the depressed left mouse button. If WebElement is passed, it will release depressed 
+left mouse button on the given WebElement
+```java
+WebElement sourceEle = driver.findElement(By.id("draggable"));
+WebElement targetEle = driver.findElement(By.id("droppable"));
+
+Actions actionProvider = new Actions(driver);
+actionProvider.clickAndHold(sourceEle).moveToElement(targetEle).build().perform();
+actionProvider.release().build().perform(); 
 ```
