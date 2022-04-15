@@ -15,4 +15,9 @@
             <class name="wiki.auth.LoginTest"/>
         </classes>
     </test>
+    <test name="Alert tests" enabled="false">
+        <classes>
+            <class name="wiki.alerts.AlertTest"/>
+        </classes>
+    </test>
 </suite>

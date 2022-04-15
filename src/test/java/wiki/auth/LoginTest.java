@@ -22,7 +22,7 @@ public class LoginTest extends BaseTest {
                 .setUserName(username)
                 .setPassword(password)
                 .clickLoginButton()
-                .assertUsernameIsCorrect(username);
+                .assertUsername(username);
     }
 
 }

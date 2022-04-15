@@ -1,6 +1,5 @@
 package wiki.alerts;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import wiki.BaseTest;
@@ -22,17 +21,20 @@ public class AlertTest extends BaseTest {
         String inputText = "It is just a text!";
         UserPage userPage = homePage.open()
                 .clickEnMainPageLink()
+                .assertWelcomeBlockIsDisplayed()
                 .clickLoginLink()
                 .setUserName(username)
                 .setPassword(password)
                 .clickLoginButton()
-                .assertUsernameIsCorrect(username)
+                .assertUsername(username)
                 .clickUsernameLink()
                 .clickUserPageLink()
                 .putTextToTextArea(inputText);
-        userPage.clickLogo();
-        wait.until(ExpectedConditions.alertIsPresent()).dismiss();
-        userPage.clickLogo().assertWelcomeBlockIsDisplayed();
+        userPage.clickLogo()
+                .waitForAlert()
+                .dismiss();
+        userPage.assertUserPageTabIsSelected()
+                .assertAlertIsNotPresent();
     }
 
 }
