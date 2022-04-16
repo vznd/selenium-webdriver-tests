@@ -50,6 +50,7 @@ NEW: add loginTest
 | EXC   | Excluded test         |
 | REF   | Made some refactoring |
 | DOC   | Documentation changes |
+| IMP   | Improved code         |
 
 
 ## Pull request conventions
