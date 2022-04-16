@@ -3,37 +3,27 @@ package wiki.alerts;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import wiki.BaseTest;
-import wiki.pages.HomePage;
-import wiki.pages.UserPage;
+import wiki.pages.EditArticlePage;
 
 public class AlertTest extends BaseTest {
 
-    public HomePage homePage;
+    public EditArticlePage editArticlePage;
 
     @BeforeMethod
     public void preCondition() {
-        homePage = new HomePage(driver);
-        homePage.open().assertCentralLogoImgIsDisplayed();
+        driver.get("https://en.wikipedia.org/w/index.php?title=Bank&action=edit&section=1");
+        editArticlePage = new EditArticlePage(driver);
     }
 
     @Test
     public void dismissAlert() {
-        String inputText = "It is just a text!";
-        UserPage userPage = homePage.open()
-                .clickEnMainPageLink()
-                .assertWelcomeBlockIsDisplayed()
-                .clickLoginLink()
-                .setUserName(username)
-                .setPassword(password)
-                .clickLoginButton()
-                .assertUsername(username)
-                .clickUsernameLink()
-                .clickUserPageLink()
-                .putTextToTextArea(inputText);
-        userPage.clickLogo()
-                .waitForAlert()
+        editArticlePage.clickStartEditingPopup();
+        editArticlePage.assertEditArticlePageIsOpen();
+        editArticlePage.putTextToTextArea("I am some text.")
+                .clickLogo();
+        editArticlePage.waitForAlert()
                 .dismiss();
-        userPage.assertUserPageTabIsSelected()
+        editArticlePage.assertEditArticlePageIsOpen()
                 .assertAlertIsNotPresent();
     }
 
