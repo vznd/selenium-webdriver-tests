@@ -1,6 +1,5 @@
-package wiki;
+package wiki.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,7 +30,7 @@ public class UserPage extends BasePage {
     }
 
     public UserPage putTextToTextArea(String text) {
-        longWait.until(ExpectedConditions.visibilityOf(textArea))
+        wait.until(ExpectedConditions.visibilityOf(textArea))
                 .sendKeys(text);
         return this;
     }

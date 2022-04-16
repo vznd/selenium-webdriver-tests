@@ -3,7 +3,7 @@ package wiki.navigation;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import wiki.BaseTest;
-import wiki.HomePage;
+import wiki.pages.HomePage;
 
 public class NavigateToMainPageTest extends BaseTest {
 

@@ -3,8 +3,8 @@ package wiki.alerts;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import wiki.BaseTest;
-import wiki.HomePage;
-import wiki.UserPage;
+import wiki.pages.HomePage;
+import wiki.pages.UserPage;
 
 public class AlertTest extends BaseTest {
 

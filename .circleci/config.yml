@@ -36,11 +36,15 @@ jobs:
       - run:
           name: "Run tests"
           command: mvn test
+
       - store_test_results:
           path: target/surefire-reports/junitreports
+
       - store_artifacts:
           path: target/surefire-reports/junitreports
-          destination: circleci-docs
+
+      - store_artifacts:
+          path: target/screenshots
 
 workflows:
   test-workflow:
