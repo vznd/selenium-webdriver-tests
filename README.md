@@ -170,7 +170,7 @@ alert.accept();
 alert.dismiss();
 ```
 
-* [To cover] Enter some information to a Prompt alert
+* [Covered] Enter some information to a Prompt alert
 ```java
 Alert alert = driver.switchTo().alert(); // Firstly, get the Alert and store in variable
 alert.sendKeys("Denny") // Secondly, enter the text

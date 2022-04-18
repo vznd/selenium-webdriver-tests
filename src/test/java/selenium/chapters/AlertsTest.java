@@ -70,9 +70,18 @@ public class AlertsTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), redirectUrl, "The site was not correct!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void enterInfoIntoPrompt() {
-        // Use JSHelper.displayPromptWithRedirect(WebDriver, String, String, String)
+        String redirectUrl = "https://duckduckgo.com/";
+        JSHelper.displayPromptWithRedirect(driver, "Do you want to change search engine? Write answer: 100 + 55 = ?",
+                "155", redirectUrl);
+
+        driver.switchTo().alert().sendKeys("155");
+        driver.switchTo().alert().accept();
+
+        boolean isAlertPresent = AlertHelper.isAlertPresent(driver);
+        Assert.assertFalse(isAlertPresent, "The alert was present!");
+        Assert.assertEquals(driver.getCurrentUrl(), redirectUrl, "The site was not correct!");
     }
 
 }
