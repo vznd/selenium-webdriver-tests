@@ -1,4 +1,4 @@
-package wiki.pages;
+package selenium.pom;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

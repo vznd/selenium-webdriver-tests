@@ -1,4 +1,4 @@
-package wiki.helpers;
+package selenium.helpers;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

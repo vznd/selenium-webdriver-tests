@@ -2,22 +2,22 @@
 <suite name="Wiki Tests" parallel="false">
     <test name="Navigate to Main Page">
         <classes>
-            <class name="wiki.navigation.NavigateToMainPageTest"/>
+            <class name="selenium.pom.NavigateToMainPageTest"/>
         </classes>
     </test>
     <test name="Search From Home Page">
         <classes>
-            <class name="wiki.search.SearchFromHomePage"/>
+            <class name="selenium.pom.SearchFromHomePage"/>
         </classes>
     </test>
     <test name="Auth tests">
         <classes>
-            <class name="wiki.auth.LoginTest"/>
+            <class name="selenium.pom.LoginTest"/>
         </classes>
     </test>
     <test name="Alert tests">
         <classes>
-            <class name="wiki.alerts.AlertTest"/>
+            <class name="selenium.alerts.AlertTest"/>
         </classes>
     </test>
 </suite>

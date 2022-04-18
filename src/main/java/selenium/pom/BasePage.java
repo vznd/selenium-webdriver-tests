@@ -1,4 +1,4 @@
-package wiki.pages;
+package selenium.pom;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;

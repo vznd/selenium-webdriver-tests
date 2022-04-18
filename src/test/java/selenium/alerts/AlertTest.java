@@ -1,10 +1,11 @@
-package wiki.alerts;
+package selenium.alerts;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import wiki.BaseTest;
-import wiki.helpers.JSHelper;
-import wiki.pages.HomePage;
+import selenium.BaseTest;
+import selenium.helpers.JSHelper;
+import selenium.pom.HomePage;
 
 public class AlertTest extends BaseTest {
 
@@ -26,6 +27,13 @@ public class AlertTest extends BaseTest {
                 .dismiss();
         homePage.assertCentralLogoImgIsDisplayed()
                 .assertAlertIsNotPresent();
+    }
+
+    @Test
+    public void assertTextAlert() {
+        String actualAlertText = homePage.waitForAlert().getText();
+        String expectedAlertText = alertText;
+        Assert.assertEquals(actualAlertText, expectedAlertText, "The alert text is incorrect!");
     }
 
 }

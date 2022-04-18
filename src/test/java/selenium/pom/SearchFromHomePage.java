@@ -1,9 +1,8 @@
-package wiki.search;
+package selenium.pom;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import wiki.BaseTest;
-import wiki.pages.HomePage;
+import selenium.BaseTest;
 
 public class SearchFromHomePage extends BaseTest {
 

@@ -1,4 +1,4 @@
-package wiki.pages;
+package selenium.pom;
 
 import org.testng.Assert;
 import org.openqa.selenium.WebDriver;

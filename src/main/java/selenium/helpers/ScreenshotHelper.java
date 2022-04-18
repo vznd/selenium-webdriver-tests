@@ -1,4 +1,4 @@
-package wiki.helpers;
+package selenium.helpers;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;

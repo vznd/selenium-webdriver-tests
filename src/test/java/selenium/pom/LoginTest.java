@@ -1,17 +1,21 @@
-package wiki.auth;
+package selenium.pom;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import wiki.BaseTest;
-import wiki.pages.HomePage;
+import selenium.BaseTest;
+import selenium.pom.HomePage;
 
 public class LoginTest extends BaseTest {
 
     private HomePage homePage;
+    public String username;
+    public String password;
 
     @BeforeMethod
     public void preCondition() {
         homePage = new HomePage(driver);
+        username = "Username12340";
+        password = "Qazxc123";
     }
 
     @Test

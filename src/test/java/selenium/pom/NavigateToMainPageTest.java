@@ -1,9 +1,9 @@
-package wiki.navigation;
+package selenium.pom;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import wiki.BaseTest;
-import wiki.pages.HomePage;
+import selenium.BaseTest;
+import selenium.pom.HomePage;
 
 public class NavigateToMainPageTest extends BaseTest {
 
