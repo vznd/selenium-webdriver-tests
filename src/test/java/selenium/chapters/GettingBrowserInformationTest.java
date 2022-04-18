@@ -21,13 +21,10 @@ public class GettingBrowserInformationTest extends BaseTest {
         Assert.assertEquals(actualTitle, expectedTitle, "The title was not correct!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void getCurrentUrl() {
-        /*
-        STR:
-        1) Open some URL
-        2) Assert actual URL match expected
-         */
+        String actualUrl = driver.getCurrentUrl();
+        Assert.assertEquals(actualUrl, URL, "The URL was not correct!");
     }
 
 }
