@@ -12,4 +12,9 @@
             <class name="selenium.chapters.AlertsTest"/>
         </classes>
     </test>
+    <test name="Getting browser information tests">
+        <classes>
+            <class name="selenium.chapters.GettingBrowserInformationTest"/>
+        </classes>
+    </test>
 </suite>
