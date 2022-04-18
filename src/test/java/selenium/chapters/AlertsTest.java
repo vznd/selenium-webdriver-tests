@@ -16,13 +16,14 @@ public class AlertsTest extends BaseTest {
 
     @BeforeMethod
     public void openURL() {
-        driver.get("https://google.com");
+        driver.get("https://google.com/");
     }
 
     @Test
     public void storeAlertWithWebDriver() {
         String alertText = "I am alert!";
         JSHelper.displaySimpleAlert(driver, alertText);
+
         Alert alert = driver.switchTo().alert();
     }
 
@@ -30,9 +31,9 @@ public class AlertsTest extends BaseTest {
     public void storeAlertWithWebDriverWait() {
         String alertText = "I am alert!";
         JSHelper.displaySimpleAlert(driver, alertText);
-
         Duration timeout = Duration.ofSeconds(30);
         WebDriverWait wait = new WebDriverWait(driver, timeout);
+
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
     }
 
@@ -42,6 +43,7 @@ public class AlertsTest extends BaseTest {
         JSHelper.displaySimpleAlert(driver, alertText);
 
         driver.switchTo().alert().dismiss();
+
         boolean isAlertPresent = AlertHelper.isAlertPresent(driver);
         Assert.assertFalse(isAlertPresent, "The alert was present!");
     }
@@ -55,9 +57,17 @@ public class AlertsTest extends BaseTest {
         Assert.assertEquals(actualAlertText, alertText, "The alert text was not correct!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void acceptAlert() {
-        // Use JSHelper.displayAlertWithRedirectOnAccept(WebDriver, String, String)
+        String alertText = "Google does not work! Click OK if you want to go to another search engine";
+        String redirectUrl = "https://duckduckgo.com/";
+        JSHelper.displayAlertWithRedirectOnAccept(driver, alertText, redirectUrl);
+
+        driver.switchTo().alert().accept();
+
+        boolean isAlertPresent = AlertHelper.isAlertPresent(driver);
+        Assert.assertFalse(isAlertPresent, "The alert was present!");
+        Assert.assertEquals(driver.getCurrentUrl(), redirectUrl, "The site was not correct!");
     }
 
     @Test // COMING SOON

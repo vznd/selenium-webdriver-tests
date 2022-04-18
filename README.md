@@ -160,7 +160,7 @@ Alert alert = driver.switchTo().alert();
 alert.getText();
 ```
 
-* [To cover] Press OK button in the alert
+* [Covered] Press OK button in the alert
 ```java
 alert.accept();
 ```
