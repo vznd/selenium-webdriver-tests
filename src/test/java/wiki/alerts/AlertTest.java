@@ -3,27 +3,28 @@ package wiki.alerts;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import wiki.BaseTest;
-import wiki.pages.EditArticlePage;
+import wiki.helpers.JSHelper;
+import wiki.pages.HomePage;
 
 public class AlertTest extends BaseTest {
 
-    public EditArticlePage editArticlePage;
+    public HomePage homePage;
+    public String alertText;
 
     @BeforeMethod
     public void preCondition() {
-        driver.get("https://en.wikipedia.org/w/index.php?title=Bank&action=edit&section=1");
-        editArticlePage = new EditArticlePage(driver);
+        homePage = new HomePage(driver);
+        homePage.open()
+                .assertCentralLogoImgIsDisplayed();
+        alertText = "I am alert!";
+        JSHelper.displayAlert(driver, alertText);
     }
 
     @Test
     public void dismissAlert() {
-        editArticlePage.clickStartEditingPopup();
-        editArticlePage.assertEditArticlePageIsOpen();
-        editArticlePage.putTextToTextArea("I am some text.")
-                .clickLogo();
-        editArticlePage.waitForAlert()
+        homePage.waitForAlert()
                 .dismiss();
-        editArticlePage.assertEditArticlePageIsOpen()
+        homePage.assertCentralLogoImgIsDisplayed()
                 .assertAlertIsNotPresent();
     }
 
