@@ -132,18 +132,30 @@ driver.navigate().forward();
 
 Alerts are not covered as of now. Should be covered.
 
-* [To cover] Store Alert in a variable using WebDriverWait. Please refer to [Waits](#waits) section for more information about Waits
+* [Covered] Store Alert in a variable using WebDriverWait. Please refer to [Waits](#waits) section for more information about Waits
 ```java
 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1)); // Create wait variable
 Alert alert = wait.until(ExpectedConditions.alertIsPresent()); // Get an alert and store to variable
 ```
 
-* [To cover] Store Alert in a variable using driver
+* [Covered] There is no ExpectedCondition like "alertIsNotPresent()". So, to check that there is no alert, you can implement helper
+```java
+public boolean isAlertPresent() {
+    try {
+        driver.switchTo().alert();
+        return true;
+    } catch (NoAlertPresentException e) {
+        return false;
+    }
+}
+```
+
+* [Covered] Store Alert in a variable using driver
 ```java
 Alert alert = driver.switchTo().alert();
 ```
   
-* [To cover] Get Alert text
+* [Covered] Get Alert text
 ```java
 alert.getText();
 ```
@@ -153,7 +165,7 @@ alert.getText();
 alert.accept();
 ```
 
-* [To cover] Press Cancel button in the alert
+* [Covered] Press Cancel button in the alert
 ```java
 alert.dismiss();
 ```
