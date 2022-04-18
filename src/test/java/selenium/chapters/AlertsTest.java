@@ -1,4 +1,4 @@
-package selenium.alerts;
+package selenium.chapters;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,75 +12,57 @@ import selenium.helpers.JSHelper;
 
 import java.time.Duration;
 
-/**
- * This class demonstrates how to work with Alerts in Selenium WD
- * @see org.openqa.selenium.Alert
- */
-public class AlertTest extends BaseTest {
-
-    public String alertText;
+public class AlertsTest extends BaseTest {
 
     @BeforeMethod
     public void openURL() {
         driver.get("https://google.com");
     }
 
-    @BeforeMethod
-    public void generateAlert() {
-        alertText = "I am alert!";
-        JSHelper.displayAlert(driver, alertText);
-    }
-
-    /**
-     * Stores Alert in a variable using WebDriver
-     * The test passes if alert is present
-     * If alert is not present, the test will fail with NoAlertPresentException
-     *
-     * @see org.openqa.selenium.WebDriver
-     * @see org.openqa.selenium.NoAlertPresentException
-     */
-    //
     @Test
     public void storeAlertWithWebDriver() {
+        String alertText = "I am alert!";
+        JSHelper.displaySimpleAlert(driver, alertText);
         Alert alert = driver.switchTo().alert();
     }
 
-    /**
-     * Stores Alert in a variable using WebDriverWait
-     * The test passes if alert is present
-     * If alert is not present, the test will fail with TimeoutException
-     *
-     * @see org.openqa.selenium.support.ui.WebDriverWait
-     * @see org.openqa.selenium.TimeoutException
-     */
     @Test
     public void storeAlertWithWebDriverWait() {
+        String alertText = "I am alert!";
+        JSHelper.displaySimpleAlert(driver, alertText);
+
         Duration timeout = Duration.ofSeconds(30);
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
     }
 
-    /**
-     * Dismisses alert and check that alert is not present
-     * It uses helper method isAlertPresent()
-     *
-     * {@link selenium.helpers.AlertHelper }
-     */
     @Test
     public void waitForAlertAbsence() {
+        String alertText = "I am alert!";
+        JSHelper.displaySimpleAlert(driver, alertText);
+
         driver.switchTo().alert().dismiss();
         boolean isAlertPresent = AlertHelper.isAlertPresent(driver);
         Assert.assertFalse(isAlertPresent, "The alert was present!");
     }
 
-    /**
-     * Gets Alert text
-     *
-     */
     @Test
     public void getAlertText() {
+        String alertText = "I am alert!";
+        JSHelper.displaySimpleAlert(driver, alertText);
+
         String actualAlertText = driver.switchTo().alert().getText();
         Assert.assertEquals(actualAlertText, alertText, "The alert text was not correct!");
+    }
+
+    @Test // COMING SOON
+    public void acceptAlert() {
+        // Use JSHelper.displayAlertWithRedirectOnAccept(WebDriver, String, String)
+    }
+
+    @Test // COMING SOON
+    public void enterInfoIntoPrompt() {
+        // Use JSHelper.displayPromptWithRedirect(WebDriver, String, String, String)
     }
 
 }

@@ -212,27 +212,32 @@ driver.manage().addCookie(cookie); // Add a cookie
 driver.manage().deleteCookie(cookie); // Delete a cookie
 ```
 
+* [To cover] Delete all cookies
+```java
+driver.manage().deleteAllCookies();
+```
+
 * [Out of scope] Managing a `Same-Site` cookie attribute
 
 ### Frames
 
-* [Out of scope] Switch to Frame using WebElement
+* [To cover] Switch to Frame using WebElement
 ```java
 WebElement iframe = driver.findElement(By.cssSelector("#modal>iframe")); // Store the web element
 driver.switchTo().frame(iframe); // Switch to the frame
 ```
 
-* [Out of scope] Switch to Frame using name or id
+* [To cover] Switch to Frame using name or id
 ```java
 driver.switchTo().frame("buttonframe"); // Using the ID, the same syntax for using the name selector
 ```
 
-* [Out of scope] Switch to Frame using and index
+* [To cover] Switch to Frame using and index
 ```java
 driver.switchTo.frame(1);
 ```
 
-* [Out of scope] Leave a frame
+* [To cover] Leave a frame
 ```java
 driver.switchTo().defaultContent();
 ```
