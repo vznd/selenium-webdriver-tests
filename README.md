@@ -10,7 +10,6 @@ This repository includes selenium tests examples using [wikipedia.org](https://w
 * [Selenium Configurations, Features and Methods](#selenium-configurations-features-and-methods)
     * [Install a Selenium Library](#install-a-selenium-library)
     * [Install browser drivers](#install-browser-drivers)
-    * [Open Browsers](#open-browsers)
     * [Shared capabilities](#shared-capabilities)
     * [Getting browser information](#getting-browser-information)
     * [Browser navigation](#browser-navigation)
@@ -73,22 +72,6 @@ All information is gathered from an official [selenium website](https://www.sele
 </build>
 ```
 
-### Open Browsers
-
-* [Covered] Chrome
-```java
-ChromeOptions options = new ChromeOptions();
-driver = new ChromeDriver(options); // Opens a new browser session
-  
-driver.quit(); // Closes browser
-```
-
-* [To cover] Edge
-* [To cover] Firefox
-* [To cover] Internet Explorer
-* [To cover] Opera
-* [To cover] Safari  
-  
 ### Shared capabilities
 
 Not all the shared capabilities are used in this project. But the reference is provided for all available below.
