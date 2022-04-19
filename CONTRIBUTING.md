@@ -51,6 +51,7 @@ NEW: add loginTest
 | REF   | Made some refactoring |
 | DOC   | Documentation changes |
 | IMP   | Improved code         |
+| FIX   | Fixed test            |
 
 
 ## Pull request conventions
