@@ -225,7 +225,7 @@ driver.switchTo().frame("firstframe");
 driver.switchTo.frame(1);
 ```
 
-* [To cover] Leave a frame
+* [Covered] Leave a frame
 ```java
 driver.switchTo().defaultContent();
 ```

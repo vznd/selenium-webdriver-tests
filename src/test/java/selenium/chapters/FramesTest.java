@@ -45,16 +45,15 @@ public class FramesTest extends BaseTest {
         Assert.assertNotNull(table, "The table WebElement object was null!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void switchToDefaultContext() {
-        /*
-        STR:
-        1) Switch to frame
-        2) Find some element in this frame
-        3) Assert some data(or that found element is not null) within this frame
-        4) Switch to default content
-        5) Assert some data in default content
-         */
+        driver.switchTo().frame(0);
+        WebElement table = driver.findElement(By.cssSelector("table[id='green-table']"));
+        Assert.assertNotNull(table, "The table WebElement object was null!");
+
+        driver.switchTo().defaultContent();
+        WebElement headerInDefaultContent = driver.findElement(By.cssSelector("h1"));
+        Assert.assertNotNull(headerInDefaultContent, "This object was null!");
     }
 
 }

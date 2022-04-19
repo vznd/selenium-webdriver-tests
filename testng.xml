@@ -4,6 +4,7 @@
         <classes>
             <class name="selenium.chapters.AlertsTest"/>
             <class name="selenium.chapters.GettingBrowserInformationTest"/>
+            <class name="selenium.chapters.FramesTest"/>
         </classes>
     </test>
 </suite>
