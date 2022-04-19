@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button {
+                background-color: yellowgreen;
+            }
+        </style>
+        <script>
+            function promptWithRedirect() {
+                let result = prompt("Do you want to change search engine? Write answer: 100 + 55 = ?");
+
+                if(result.toLowerCase() == "155") {
+                    window.location.replace("https://www.google.com");
+                }
+            }
+        </script>
+        <title>Prompt with redirect</title>
+    </head>
+    <body>
+        <h1>Prompt with redirect</h1>
+        <button id="green-button" onclick="promptWithRedirect()">click me to see a prompt with redirect</button>
+    </body>
+</html>

@@ -3,16 +3,14 @@ package selenium.chapters;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import selenium.BaseTest;
+import selenium.HTMLPath;
 
-import java.io.File;
 
 public class FramesTest extends BaseTest {
 
     @BeforeTest
     public void openPageWithIframes() {
-        File resourcesDirectory = new File("src/test/resources/iframe/iframes.html");
-        String path = resourcesDirectory.getAbsolutePath();
-        driver.get(path);
+        driver.get(HTMLPath.FRAMES);
     }
 
     @Test // COMING SOON

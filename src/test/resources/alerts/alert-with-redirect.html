@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button {
+                background-color: yellowgreen;
+            }
+        </style>
+        <script>
+            function alertWithRedirect() {
+                if(confirm("Alert with redirect")) {
+                    window.location.replace("https://www.google.com/");
+                }
+            }
+        </script>
+        <title>Alert with redirect</title>
+    </head>
+    <body>
+        <h1>Alert with redirect</h1>
+        <button id="green-button" onclick="alertWithRedirect()">click me to see an alert with redirect</button>
+    </body>
+</html>
