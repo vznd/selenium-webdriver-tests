@@ -1,19 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Wiki Tests" parallel="false">
-    <test name="Page Object tests">
-        <classes>
-            <class name="selenium.pom.NavigateToMainPageTest"/>
-            <class name="selenium.pom.SearchFromHomePage"/>
-            <class name="selenium.pom.LoginTest"/>
-        </classes>
-    </test>
-    <test name="Alerts tests">
+    <test name="Selenium tests">
         <classes>
             <class name="selenium.chapters.AlertsTest"/>
-        </classes>
-    </test>
-    <test name="Getting browser information tests">
-        <classes>
             <class name="selenium.chapters.GettingBrowserInformationTest"/>
         </classes>
     </test>

@@ -3,10 +3,8 @@ package selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import selenium.helpers.ScreenshotHelper;
 
 public class BaseTest {
 
@@ -18,11 +16,7 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void tearDown(ITestResult result) {
-        if (result.getStatus() == ITestResult.FAILURE) {
-            String fileName = result.getMethod().getTestClass().getName() + "." + result.getName() + ".jpg";
-            ScreenshotHelper.takeScreenshot(driver, fileName);
-        }
+    public void tearDown() {
         driver.quit();
     }
 
