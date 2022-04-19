@@ -214,12 +214,13 @@ driver.switchTo().frame(iframe); // Switch to the frame
 ```java
 driver.switchTo().frame("buttonframe"); // Using the ID, the same syntax for using the name selector
 ```
+
 * [Covered] Switch to Frame using name
 ```java
 driver.switchTo().frame("firstframe"); 
 ```
 
-* [To cover] Switch to Frame using and index
+* [Covered] Switch to Frame using and index
 ```java
 driver.switchTo.frame(1);
 ```
