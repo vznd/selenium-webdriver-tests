@@ -210,9 +210,13 @@ WebElement iframe = driver.findElement(By.cssSelector("#modal>iframe")); // Stor
 driver.switchTo().frame(iframe); // Switch to the frame
 ```
 
-* [Covered] Switch to Frame using name or id
+* [Covered] Switch to Frame using id
 ```java
 driver.switchTo().frame("buttonframe"); // Using the ID, the same syntax for using the name selector
+```
+* [Covered] Switch to Frame using name
+```java
+driver.switchTo().frame("firstframe"); 
 ```
 
 * [To cover] Switch to Frame using and index

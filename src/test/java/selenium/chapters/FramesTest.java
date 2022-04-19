@@ -31,14 +31,11 @@ public class FramesTest extends BaseTest {
         Assert.assertNotNull(table, "The table WebElement object was null!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void switchToFrameUsingName() {
-        /*
-        STR:
-        1) Switch to frame by name
-        2) Find some element in this frame
-        3) Assert some data(or that found element is not null) within this frame
-         */
+        driver.switchTo().frame("green");
+        WebElement table = driver.findElement(By.cssSelector("table[id='green-table']"));
+        Assert.assertNotNull(table, "The table WebElement object was null!");
     }
 
     @Test // COMING SOON
