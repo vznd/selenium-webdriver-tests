@@ -204,7 +204,7 @@ driver.manage().deleteAllCookies();
 
 ### Frames
 
-* [To cover] Switch to Frame using WebElement
+* [Covered] Switch to Frame using WebElement
 ```java
 WebElement iframe = driver.findElement(By.cssSelector("#modal>iframe")); // Store the web element
 driver.switchTo().frame(iframe); // Switch to the frame

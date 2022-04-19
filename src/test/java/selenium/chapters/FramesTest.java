@@ -1,6 +1,9 @@
 package selenium.chapters;
 
-import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenium.BaseTest;
 import selenium.HTMLPath;
@@ -8,20 +11,17 @@ import selenium.HTMLPath;
 
 public class FramesTest extends BaseTest {
 
-    @BeforeTest
+    @BeforeMethod
     public void openPageWithIframes() {
         driver.get(HTMLPath.FRAMES);
     }
 
-    @Test // COMING SOON
+    @Test
     public void switchToFrameUsingWebElement() {
-        /*
-        STR:
-        1) Find a web element with frame
-        2) Switch to frame by this element
-        3) Find some element in this frame
-        4) Assert some data(or that found element is not null) within this frame
-         */
+        WebElement greenFrame = driver.findElement(By.id("first-iframe"));
+        driver.switchTo().frame(greenFrame);
+        WebElement table = driver.findElement(By.cssSelector("table[id='green-table']"));
+        Assert.assertNotNull(table, "The table WebElement object was null!");
     }
 
     @Test // COMING SOON
