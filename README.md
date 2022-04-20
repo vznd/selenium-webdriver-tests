@@ -101,7 +101,7 @@ driver.get("https://www.wikipedia.org/");
 driver.navigate().to("https://www.wikipedia.org/");
 ```
 
-* [To cover] Press a back browser button
+* [Covered] Press a back browser button
 ```java
 driver.navigate().back();
 ```

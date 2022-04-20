@@ -20,15 +20,13 @@ public class BrowserNavigationTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), HTMLPath.NAVIGATION, "The URL was not correct!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void pressBackBrowserButton() {
-        /*
-        STR:
-        1) Open a web URL with navigate
-        2) Click on a button to navigate to another URL
-        3) Click BACK button
-        4) Assert previous page is displayed
-         */
+        driver.get(HTMLPath.NAVIGATION);
+        String expectedUrl = driver.getCurrentUrl();
+        driver.findElement(By.id("frames-link")).click();
+        driver.navigate().back();
+        Assert.assertEquals(driver.getCurrentUrl(), expectedUrl, "The URL was not correct!");
     }
 
     @Test // COMING SOON
