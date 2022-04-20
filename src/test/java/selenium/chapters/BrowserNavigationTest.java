@@ -14,13 +14,10 @@ public class BrowserNavigationTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), HTMLPath.NAVIGATION, "The URL was not correct!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void openUrlWithNavigate() {
-        /*
-        STR:
-        1) Open a web URL with navigate
-        2) Assert URL was opened
-         */
+        driver.navigate().to(HTMLPath.NAVIGATION);
+        Assert.assertEquals(driver.getCurrentUrl(), HTMLPath.NAVIGATION, "The URL was not correct!");
     }
 
     @Test // COMING SOON
