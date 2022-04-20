@@ -18,4 +18,7 @@ public class HTMLPath {
     public static final String PROMPT = prefix
             + new File("src/test/resources/alerts/prompt.html").getAbsolutePath();
 
+    public static final String NAVIGATION = prefix
+            + new File("src/test/resources/navigation/navigation.html").getAbsolutePath();
+
 }

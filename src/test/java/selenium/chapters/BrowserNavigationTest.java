@@ -1,17 +1,17 @@
 package selenium.chapters;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.BaseTest;
+import selenium.HTMLPath;
 
 public class BrowserNavigationTest extends BaseTest {
 
-    @Test // COMING SOON
+    @Test
     public void openUrl() {
-        /*
-        STR:
-        1) Open a web URL
-        2) Assert URL was opened
-         */
+        driver.get(HTMLPath.NAVIGATION);
+        Assert.assertEquals(driver.getCurrentUrl(), HTMLPath.NAVIGATION, "The URL was not correct!");
     }
 
     @Test // COMING SOON
