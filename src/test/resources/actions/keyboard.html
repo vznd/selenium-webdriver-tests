@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button {
+                background-color: yellowgreen;
+            }
+        </style>
+        <script>
+            function onEnter(event) {
+                if(event.key == "Enter") {
+                    document.getElementById("green-button").style.backgroundColor = "red";
+                }
+            }
+            function setText() {
+                document.getElementById("input").text = document.getElementById("input").value;
+            }
+        </script>
+        <title>Keyboard</title>
+    </head>
+    <body>
+        <h1>Keyboard</h1>
+        <div>
+            <input type="text" id="input" onkeydown="onEnter(event)" oninput="setText()">
+            <button id="green-button">
+                <a href="click-and-hold.html">click me</a>
+            </button>
+        </div>
+    </body>
+</html>

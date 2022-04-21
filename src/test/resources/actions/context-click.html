@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button {
+                background-color: yellowgreen;
+            }
+        </style>
+        <script>
+            window.addEventListener("contextmenu", e => e.preventDefault());
+            function contextClick() {
+                var menu = document.getElementById("context-menu");
+                if (menu.style.display == "block") {
+                    menu.style.display = "none"
+                } else {
+                    menu.style.display = "block";
+                } 
+            }
+        </script>
+        <title>Context click</title>
+    </head>
+    <body>
+        <h1>Context click</h1>
+        <button id="green-button" oncontextmenu="contextClick()">click me to see context menu</button>
+        <div id="context-menu" style="display: none"> 
+            <ul class="menu"> 
+                <li id="google-link"><a href="https://www.google.com/">Google</a></li> 
+                <li id="duckduckgo-link"><a href="https://duckduckgo.com/">Duckduckgo</a></li> 
+                <li id="bing-link"><a href="https://www.bing.com/">Bing</a></li> 
+            </ul> 
+        </div>
+    </body>
+</html>

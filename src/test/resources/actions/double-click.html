@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button {
+                background-color: yellowgreen;
+            }
+        </style>
+        <script>
+            function d() {
+                document.getElementById("green-button").style.backgroundColor = "red";
+            }
+            function c() {
+                document.getElementById("green-button").style.backgroundColor = "yellowgreen";
+            }
+        </script>
+        <title>Double click</title>
+    </head>
+    <body>
+        <h1>Double click</h1>
+        <button id="green-button" ondblclick="d()" onclick="c()">double click me</button>
+    </body>
+</html>

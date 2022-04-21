@@ -759,7 +759,7 @@ Actions actionProvider = new Actions(driver);
 actionProvider.moveToElement(gmailLink).build().perform();
 ```
 
-* [To cover] **Move by offset** - move the mouse from its current position (or 0,0) to the element
+* [Out of scope] **Move by offset** - move the mouse from its current position (or 0,0) to the element
 ```java
 // Store 'Gmail' anchor web element
 WebElement gmailLink = driver.findElement(By.linkText("Gmail"));
@@ -773,7 +773,7 @@ Actions actionProvider = new Actions(driver);
 actionProvider.moveByOffset(xOffset, yOffset).build().perform();
 ```
 
-* [To cover] **DragAndDrop** - click and hold the source element, move to the location of the target element and then releases the mouse
+* [Out of scope] **DragAndDrop** - click and hold the source element, move to the location of the target element and then releases the mouse
 ```java
 WebElement sourceEle = driver.findElement(By.id("draggable"));
 WebElement targetEle = driver.findElement(By.id("droppable"));
@@ -781,7 +781,7 @@ Actions actionProvider = new Actions(driver);
 actionProvider.dragAndDrop(sourceEle, targetEle).build().perform();
 ```
 
-* [To cover] **DragAndDropBy** - click and hold the source element, move to the location of the given offset and then releases the mouse
+* [Out of scope] **DragAndDropBy** - click and hold the source element, move to the location of the given offset and then releases the mouse
 ```java
 WebElement sourceEle = driver.findElement(By.id("draggable"));
 WebElement targetEle = driver.findElement(By.id("droppable"));
@@ -792,7 +792,7 @@ Actions actionProvider = new Actions(driver);
 actionProvider.dragAndDropBy(sourceEle, targetEleXOffset, targetEleYOffset).build().perform();
 ``` 
 
-* [To cover] **Release** - releases the depressed left mouse button. If WebElement is passed, it will release depressed 
+* [Out of scope] **Release** - releases the depressed left mouse button. If WebElement is passed, it will release depressed 
 left mouse button on the given WebElement
 ```java
 WebElement sourceEle = driver.findElement(By.id("draggable"));
