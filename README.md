@@ -711,7 +711,7 @@ inputs for a mouse, pen or touch device, and a wheel inputs for scroll wheel sup
 
 **Keyboard:**
 
-* [To cover] Enter a "webdriver" text and perform "ENTER" keyboard action
+* [Covered] Enter a "webdriver" text and perform "ENTER" keyboard action
 ```java
 driver.findElement(By.name("q")).sendKeys("webdriver" + Keys.ENTER);
 ```

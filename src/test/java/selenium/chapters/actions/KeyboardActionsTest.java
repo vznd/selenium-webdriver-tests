@@ -1,5 +1,9 @@
 package selenium.chapters.actions;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import selenium.BaseTest;
@@ -12,14 +16,12 @@ public class KeyboardActionsTest extends BaseTest {
         driver.get(HTMLPath.KEYBOARD);
     }
 
-    @Test // COMING SOON
+    @Test
     public void enterWithSendKeys() {
-        /*
-        STR:
-        1) Find input field
-        2) Press ENTER in the input field
-        3) Assert css value of green-button was changed to red
-         */
+        driver.findElement(By.id("input"))
+                .sendKeys("Hello!" + Keys.ENTER);
+        driver.findElement(By.cssSelector("button[style='background-color: red;']"))
+                .isDisplayed();
     }
 
     @Test // COMING SOON

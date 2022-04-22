@@ -6,6 +6,7 @@
             <class name="selenium.chapters.GettingBrowserInformationTest"/>
             <class name="selenium.chapters.FramesTest"/>
             <class name="selenium.chapters.BrowserNavigationTest"/>
+            <class name="selenium.chapters.actions.KeyboardActionsTest"></class>
         </classes>
     </test>
 </suite>
