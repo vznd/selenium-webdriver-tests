@@ -19,8 +19,10 @@ public class KeyboardActionsTest extends BaseTest {
     public void enterWithSendKeys() {
         driver.findElement(By.id("input"))
                 .sendKeys("Hello!" + Keys.ENTER);
-        driver.findElement(By.cssSelector("button[style='background-color: red;']"))
-                .isDisplayed();
+        String actualButtonColor = driver.findElement(By.id("green-button")).getCssValue("background-color");
+        String expectedButtonColor = "rgba(255, 0, 0, 1)";
+        Assert.assertEquals(actualButtonColor, expectedButtonColor,
+                "The color of button did not match expected!");
     }
 
     @Test
@@ -48,7 +50,7 @@ public class KeyboardActionsTest extends BaseTest {
     @Test
     public void ctrlClick() {
         WebElement button = driver.findElement(By.id("green-button"));
-        new Actions(driver).keyDown(Keys.COMMAND).click(button).perform();
+        new Actions(driver).keyDown(Keys.LEFT_CONTROL).click(button).perform();
         int actualAmountOfWindows = driver.getWindowHandles().size();
         int expectedAmountOfWindows = 2;
         Assert.assertEquals(actualAmountOfWindows, expectedAmountOfWindows,
