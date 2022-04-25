@@ -45,15 +45,14 @@ public class KeyboardActionsTest extends BaseTest {
         Assert.assertEquals(actualText, expectedText, "The text did not match expected!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void ctrlClick() {
-         /*
-        STR:
-        1) Define Actions object
-        2) Build action which presses LEFT_CONTROL and clicks on green-button
-        3) Perform action
-        4) Assert two windows are currently open
-         */
+        WebElement button = driver.findElement(By.id("green-button"));
+        new Actions(driver).keyDown(Keys.COMMAND).click(button).perform();
+        int actualAmountOfWindows = driver.getWindowHandles().size();
+        int expectedAmountOfWindows = 2;
+        Assert.assertEquals(actualAmountOfWindows, expectedAmountOfWindows,
+                "The amount of windows did not match expected!");
     }
 
 }
