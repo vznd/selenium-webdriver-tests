@@ -1,9 +1,8 @@
-package selenium.chapters;
+package vznd.selenium;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import selenium.BaseTest;
 
 public class GettingBrowserInformationTest extends BaseTest {
 

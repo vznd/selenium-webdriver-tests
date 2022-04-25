@@ -1,6 +1,4 @@
-package selenium.chapters.waits;
-
-import selenium.BaseTest;
+package vznd.selenium;
 
 public class ExplicitWaitTest extends BaseTest {
 

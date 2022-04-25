@@ -1,4 +1,4 @@
-package selenium;
+package vznd.selenium;
 
 import java.io.File;
 

@@ -1,10 +1,8 @@
-package selenium.chapters;
+package vznd.selenium;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import selenium.BaseTest;
-import selenium.HTMLPath;
 
 public class BrowserNavigationTest extends BaseTest {
 

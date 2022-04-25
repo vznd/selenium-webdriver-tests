@@ -1,7 +1,6 @@
-package selenium.chapters.actions;
+package vznd.selenium;
 
 import org.testng.annotations.Test;
-import selenium.BaseTest;
 
 public class MouseActionsTest extends BaseTest {
 

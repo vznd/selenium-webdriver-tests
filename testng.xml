@@ -2,11 +2,11 @@
 <suite name="Wiki Tests" parallel="false">
     <test name="Selenium tests">
         <classes>
-            <class name="selenium.chapters.AlertsTest"/>
-            <class name="selenium.chapters.GettingBrowserInformationTest"/>
-            <class name="selenium.chapters.FramesTest"/>
-            <class name="selenium.chapters.BrowserNavigationTest"/>
-            <class name="selenium.chapters.actions.KeyboardActionsTest"></class>
+            <class name="vznd.selenium.AlertsTest"/>
+            <class name="vznd.selenium.GettingBrowserInformationTest"/>
+            <class name="vznd.selenium.FramesTest"/>
+            <class name="vznd.selenium.BrowserNavigationTest"/>
+            <class name="vznd.selenium.KeyboardActionsTest"></class>
         </classes>
     </test>
 </suite>

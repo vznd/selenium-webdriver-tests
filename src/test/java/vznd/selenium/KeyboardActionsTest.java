@@ -1,13 +1,9 @@
-package selenium.chapters.actions;
+package vznd.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import selenium.BaseTest;
-import selenium.HTMLPath;
 
 public class KeyboardActionsTest extends BaseTest {
 

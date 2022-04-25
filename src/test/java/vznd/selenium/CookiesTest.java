@@ -1,8 +1,7 @@
-package selenium.chapters;
+package vznd.selenium;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import selenium.BaseTest;
 
 public class CookiesTest extends BaseTest {
 
