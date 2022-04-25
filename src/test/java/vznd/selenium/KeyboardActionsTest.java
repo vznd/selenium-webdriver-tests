@@ -2,6 +2,9 @@ package vznd.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,14 +23,14 @@ public class KeyboardActionsTest extends BaseTest {
                 .isDisplayed();
     }
 
-    @Test // COMING SOON
+    @Test
     public void enterWithActions() {
-        /*
-        STR:
-        1) Find input field and store it to a variable
-        2) Press ENTER using Actions
-        3) Assert css value of green-button was changed to red
-         */
+        WebElement inputField = driver.findElement(By.id("input"));
+        new Actions(driver).sendKeys(inputField, "Hello!" + Keys.ENTER).perform();
+        String actualButtonColor = driver.findElement(By.id("green-button")).getCssValue("background-color");
+        String expectedButtonColor = "rgba(255, 0, 0, 1)";
+        Assert.assertEquals(actualButtonColor, expectedButtonColor,
+                "The color of button did not match expected!");
     }
 
     @Test // COMING SOON
