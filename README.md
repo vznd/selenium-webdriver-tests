@@ -716,13 +716,13 @@ inputs for a mouse, pen or touch device, and a wheel inputs for scroll wheel sup
 driver.findElement(By.name("q")).sendKeys("webdriver" + Keys.ENTER);
 ```
 
-* [To cover] Perform "ENTER" keyboard action using Actions object
+* [Covered] Perform "ENTER" keyboard action using Actions object
 ```java
 Actions action = new Actions(driver);
 action.sendKeys(Keys.ENTER).perform();
 ```
 
-* [To cover] Enters text "qwerty" with keyDown SHIFT key and after keyUp SHIFT key (QWERTYqwerty)
+* [Covered] Enters text "qwerty" with keyDown SHIFT key and after keyUp SHIFT key (QWERTYqwerty)
 ```java
 Actions action = new Actions(driver);
 WebElement search = driver.findElement(By.name("q"));

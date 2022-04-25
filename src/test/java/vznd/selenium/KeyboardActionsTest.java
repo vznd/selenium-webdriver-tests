@@ -33,15 +33,16 @@ public class KeyboardActionsTest extends BaseTest {
                 "The color of button did not match expected!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void keyUpAndDown() {
-         /*
-        STR:
-        1) Define Actions object
-        2) Find input field and store it to a variable
-        3) Build action which sends QWERTYqwerty into a input filed
-        4) Assert entered text from the 'value' or 'text' attribute
-         */
+        WebElement inputField = driver.findElement(By.id("input"));
+        new Actions(driver)
+                .keyDown(Keys.SHIFT).sendKeys(inputField,"qwerty")
+                .keyUp(Keys.SHIFT).sendKeys("qwerty")
+                .perform();
+        String actualText = inputField.getAttribute("value");
+        String expectedText = "QWERTYqwerty";
+        Assert.assertEquals(actualText, expectedText, "The text did not match expected!");
     }
 
     @Test // COMING SOON
