@@ -236,7 +236,7 @@ WebDriver does not make the distinction between windows and tabs. If your site o
 Selenium will let you work with it using a window handle. Each window has a unique identifier which remains persistent 
 in a single session.
 
-* [To cover] Get original window identifier and put it to a variable
+* [Covered] Get original window identifier and put it to a variable
 ```java
 String originalWindow = driver.getWindowHandle();
 ```

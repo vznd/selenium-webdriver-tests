@@ -6,7 +6,8 @@
             <class name="vznd.selenium.GettingBrowserInformationTest"/>
             <class name="vznd.selenium.FramesTest"/>
             <class name="vznd.selenium.BrowserNavigationTest"/>
-            <class name="vznd.selenium.KeyboardActionsTest"></class>
+            <class name="vznd.selenium.KeyboardActionsTest"/>
+            <class name="vznd.selenium.WindowsTest"/>
         </classes>
     </test>
 </suite>
