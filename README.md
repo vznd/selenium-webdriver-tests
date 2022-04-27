@@ -2,11 +2,12 @@
   
 [![CircleCI](https://circleci.com/bb/den44/selenium-webdriver-tests.svg?style=shield&circle-token=beec6688d1137f803b984f0bd3564ba6caaeeb9b)](https://app.circleci.com/pipelines/bitbucket/den44/selenium-webdriver-tests?branch=master&filter=all)
 
-This repository includes selenium tests examples using [wikipedia.org](https://www.wikipedia.org/).
+This repository includes selenium tests examples using custom spring boot application.
 
 ## Overview
 
 * [Run tests](#run-tests)
+* [Additional Information](#additional-information)
 * [Selenium Configurations, Features and Methods](#selenium-configurations-features-and-methods)
     * [Install a Selenium Library](#install-a-selenium-library)
     * [Install browser drivers](#install-browser-drivers)
@@ -24,12 +25,17 @@ This repository includes selenium tests examples using [wikipedia.org](https://w
 ## Run tests
 
 To run tests on your local machine, you need to do the following steps:  
-1) Create the following folder structure on your PC `/tmp/chromedriver`  
-2) Check your local Chrome browser version and download corresponding chromedriver on your local machine. You can use an official Chrome [web page](https://chromedriver.storage.googleapis.com/index.html).  
+1) Create the following folder structure on your PC `mkdir -p /tmp/chromedriver`  
+2) Check your local Chrome browser version and [download](https://chromedriver.storage.googleapis.com/index.html) corresponding chromedriver on your local machine.  
 3) Unzip downloaded archive, e.g. `chromedriver_mac64.zip`  
 4) Put the unarchived file to the created folder on the 1st step, so you have your driver under the following location: `/tmp/chromedriver`  
 5) Clone this repository  
-6) Run `mvn test`
+6) Run spring boot application `mvn spring-boot:run &`
+7) Run tests `mvn test`
+
+## Additional Information
+
+The 3rd version of selenium is used because the 4th one is in conflict with the Sprint Boot dependencies.
 
 ## Selenium Configurations, Features and Methods 
 

@@ -34,6 +34,9 @@ jobs:
             unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
             export PATH=$CHROMEDRIVER_DIR:$PATH
       - run:
+          name: "Run application"
+          command: mvn spring-boot:run &
+      - run:
           name: "Run tests"
           command: mvn test
 
@@ -47,6 +50,6 @@ jobs:
           path: target/screenshots
 
 workflows:
-  test-workflow:
+  default:
     jobs:
       - test

@@ -24,7 +24,7 @@ public class AlertsTest extends BaseTest {
         driver.get(HTMLPath.SIMPLE_ALERT);
         driver.findElement(By.id("green-button")).click();
         Duration timeout = Duration.ofSeconds(30);
-        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        WebDriverWait wait = new WebDriverWait(driver, timeout.getSeconds());
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
     }
 
