@@ -53,6 +53,9 @@ NEW: add loginTest
 | IMP   | Improved code         |
 | FIX   | Fixed test            |
 
+**Note:** if your commit has a `DOC` scope — please, add `[skip ci]` tag to the end of your commit message, to avoid 
+unnecessary CI pipeline execution.
+
 
 ## Pull request conventions
 
