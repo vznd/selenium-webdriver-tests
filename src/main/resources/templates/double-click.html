@@ -2,18 +2,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="../styles/style.css">
-        <script>
-            function d() {
-                document.getElementById("green-button").style.backgroundColor = "red";
-            }
-            function c() {
-                document.getElementById("green-button").style.backgroundColor = "yellowgreen";
-            }
-        </script>
+        <script src="../scripts/click-scripts.js"></script>
         <title>Double click</title>
     </head>
     <body>
         <h1>Double click</h1>
-        <button id="green-button" ondblclick="d()" onclick="c()">double click me</button>
+        <button id="green-button" ondblclick="doubleClicked()" onclick="clicked()">double click me</button>
     </body>
 </html>
