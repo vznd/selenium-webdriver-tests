@@ -1,4 +1,4 @@
-package vznd.selenium;
+package vznd.selenium.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

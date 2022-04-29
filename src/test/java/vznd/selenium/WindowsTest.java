@@ -12,15 +12,7 @@ public class WindowsTest extends BaseTest {
 
     @BeforeMethod
     public void preCondition() {
-        driver.get(HTMLPath.NAVIGATION);
-        WebElement link = driver.findElement(By.id("frames-link"));
-        new Actions(driver)
-                .keyDown(Keys.LEFT_CONTROL)
-                .click(link)
-                .click(link)
-                .keyUp(Keys.LEFT_CONTROL)
-                .build()
-                .perform();
+        driver.get(HTMLPath.WINDOWS);
     }
 
     @Test
