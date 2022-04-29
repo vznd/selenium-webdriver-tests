@@ -418,37 +418,39 @@ String content = pdf.getContent(); // Invoke a getContent method and store the r
 | tag name          | Locates elements whose tag name matches the search value                                                                                      |
 | xpath             | Locates elements matching an XPath expression                                                                                                 |
   
+**Relative locators:**  
+  
 Examples below with the `above`, `below`, `left of`, `right of`, `near` and chaining locators 
 are related to the following image: 
   
 <img src="https://www.selenium.dev/images/documentation/webdriver/relative_locators.png">
 
-* [To cover] Above - find the `<input>` element which is above the `#password` element
+* [Out of scope] Above - find the `<input>` element which is above the `#password` element
 ```java
 By emailLocator = RelativeLocator.with(By.tagName("input")).above(By.id("password"));
 ```
 
-* [To cover] Below - find the `<input>` element which is below the `#email` element
+* [Out of scope] Below - find the `<input>` element which is below the `#email` element
 ```java
 By passwordLocator = RelativeLocator.with(By.tagName("input")).below(By.id("email"));
 ```
 
-* [To cover] Left of - find the `<button>` element which is to the left of the `#submit` element
+* [Out of scope] Left of - find the `<button>` element which is to the left of the `#submit` element
 ```java
 By cancelLocator = RelativeLocator.with(By.tagName("button")).toLeftOf(By.id("submit"));
 ```
 
-* [To cover] Right of - find the `<button>` element which is to the right of the `#cancel` element
+* [Out of scope] Right of - find the `<button>` element which is to the right of the `#cancel` element
 ```java
 By submitLocator = RelativeLocator.with(By.tagName("button")).toRightOf(By.id("cancel"));
 ```
 
-* [To cover] Near - find the `<input>` element which is not more than 50px near the `#lbl-email` element
+* [Out of scope] Near - find the `<input>` element which is not more than 50px near the `#lbl-email` element
 ```java
 By emailLocator = RelativeLocator.with(By.tagName("input")).near(By.id("lbl-email"));
 ```
 
-* [To cover] Chaining locators - find the `<button>` element which below the `#email` element and to the right of the `#cancel` element
+* [Out of scope] Chaining locators - find the `<button>` element which below the `#email` element and to the right of the `#cancel` element
 ```java
 By submitLocator = RelativeLocator.with(By.tagName("button")).below(By.id("email")).toRightOf(By.id("cancel"));
 ```  

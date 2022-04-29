@@ -14,5 +14,6 @@ public class HTMLPath {
     public static final String KEYBOARD = "http://localhost:8080/keyboard";
     public static final String WINDOWS = "http://localhost:8080/windows";
     public static final String COOKIES = "http://localhost:8080/cookies";
+    public static final String FINDERS = "http://localhost:8080/finders";
 
 }
