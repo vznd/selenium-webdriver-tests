@@ -1,29 +1,38 @@
 package vznd.selenium;
 
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class CookiesTest extends BaseTest {
 
-    @BeforeTest // COMING SOON
-    public void createCookieAndStoreItToVariable() {
-        // STR: - create a cookie variable
+    public final String COOKIE_KEY = "locale";
+    public final String COOKIE_VALUE = "EN";
+
+    @BeforeMethod
+    public void preCondition() {
+        driver.get(HTMLPath.COOKIES);
+    }
+
+    @AfterMethod
+    public void cleanUp() {
+        driver.manage().deleteCookieNamed(COOKIE_KEY);
     }
 
     @Test // COMING SOON
     public void addCookie() {
         /*
         STR:
-        1) Add a cookie which was created in @BeforeTest
-        2) Assert a new cookie was added
+        1) Create a cookie and store it to a variable (COOKIE_KEY, COOKIE_VALUE)
+        2) Add a cookie
+        3) Assert a new cookie was added
          */
     }
 
     @Test // COMING SOON
     public void getCookieByName() {
         /*
-        1) Add a cookie which was created in @BeforeTest
-        2) Get this cookie by name
+        1) Get cookie by name
         3) Assert cookie value
          */
     }
@@ -50,8 +59,9 @@ public class CookiesTest extends BaseTest {
     public void deleteCookieByCookieObject() {
         /*
         STR:
-        1) Add a cookie which was created in @BeforeTest
-        2) Delete a cookie by object
+        1) Create a cookie and store it to a variable (COOKIE_KEY, COOKIE_VALUE)
+        2) Add a cookie
+        3) Delete a cookie by object
         3) Assert cookie was deleted
          */
     }
