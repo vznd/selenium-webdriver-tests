@@ -23,15 +23,45 @@ This repository includes selenium tests examples using custom spring boot applic
     * [Actions API](#actions-api)
 
 ## Run tests
+ 
+1) Download ChromeDriver  
 
-To run tests on your local machine, you need to do the following steps:  
-1) Create the following folder structure on your PC `mkdir -p /tmp/chromedriver`  
-2) Check your local Chrome browser version and [download](https://chromedriver.storage.googleapis.com/index.html) corresponding chromedriver on your local machine.  
-3) Unzip downloaded archive, e.g. `chromedriver_mac64.zip`  
-4) Put the unarchived file to the created folder on the 1st step, so you have your driver under the following location: `/tmp/chromedriver`  
-5) Clone this repository  
-6) Run spring boot application `mvn spring-boot:run &`
-7) Run tests `mvn test`
+  * Check your local Chrome browser version and [download](https://chromedriver.storage.googleapis.com/index.html) corresponding chromedriver version  
+
+  * Create the following folder structure  
+```bash
+mkdir -p /tmp/chromedriver
+```
+
+  * Unzip downloaded archive  
+```bash
+unzip chromedriver_mac64.zip
+```
+
+  * Move chromedriver to the `/tmp/chromedriver` location  
+```bash
+mv ~/Downloads/chromedriver /tmp/chromedriver/
+```
+
+2) Clone this repository  
+```bash
+git clone https://github.com/vznd/selenium-webdriver-tests.git
+```
+
+3) Move to a project directory
+```bash
+cd selenium-webdriver-tests
+```
+
+4) Run spring boot application  
+```bash
+mvn spring-boot:run &
+```
+
+5) Run tests  
+```bash
+mvn test
+```
 
 ## Additional Information
 
