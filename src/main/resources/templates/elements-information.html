@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/style.css">
+        <title>Information</title>
+    </head>
+    <body>
+        <h1>Elements Information</h1>
+        <h2 id="form-title">User Form</h2> 
+        <form id="user-form">
+            <label for="first-name">First name:</label>
+            <input class="user-data" id="first-name" type="text"><br><br>
+            <label for="last-name">Last name:</label>
+            <input class="user-data" id="last-name" type="text"><br><br>
+            <input class="user-data" id="agreement" type="checkbox">
+            <label>I agree to process my data.</label><br><br>
+            <input id="submit-button" type="submit" value="Submit">
+        </form>
+        <script>
+            var submit = document.getElementById("submit-button");
+            submit.disabled = true;
+            
+            var inputs = document.getElementsByClassName("user-data");
+            for(var i = 0; i < inputs.length; i++) {
+                inputs[i].addEventListener("change", validateForm);
+            }
+            
+            function validateForm() {
+                var firstNameValue = document.getElementById("first-name").value;
+                var lastNameValue = document.getElementById("last-name").value;
+                var isCheckBoxUnchecked = document.getElementById("agreement").checked == false;
+                console.log("isUnchecked " + isCheckBoxUnchecked);
+
+                (firstNameValue == "" || lastNameValue == "" || isCheckBoxUnchecked ) ? (submit.disabled = true) : (submit.disabled = false);
+            }
+        </script>
+    </body>
+</html>

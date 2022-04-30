@@ -8,7 +8,12 @@ public class ElementsController {
 
     @GetMapping("/finders")
     public String finders() {
-        return "finders";
+        return "elements-finders";
+    }
+
+    @GetMapping("/information")
+    public String information() {
+        return "elements-information";
     }
 
 }
