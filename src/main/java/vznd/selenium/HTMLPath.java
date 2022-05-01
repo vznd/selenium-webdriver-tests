@@ -17,6 +17,7 @@ public class HTMLPath {
     public static final String FINDERS = "http://localhost:8080/finders";
     public static final String INFORMATION = "http://localhost:8080/information";
     public static final String INTERACTIONS = "http://localhost:8080/interactions";
+    public static final String SELECT_LISTS = "http://localhost:8080/select-lists";
     public static final String IMPLICIT_WAIT = "http://localhost:8080/implicit-wait";
 
 }

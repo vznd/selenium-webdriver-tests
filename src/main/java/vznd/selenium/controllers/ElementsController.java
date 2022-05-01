@@ -21,4 +21,9 @@ public class ElementsController {
         return "elements-interactions";
     }
 
+    @GetMapping("/select-lists")
+    public String selectLists() {
+        return "elements-select-lists";
+    }
+
 }

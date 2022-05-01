@@ -556,11 +556,30 @@ Consider the html below.
  <option value=value3>Cheese</option>
 </select>
 ```
-
 * [To cover] Initialize select object and store it to a variable
 ```java
 WebElement selectElement = driver.findElement(By.id("check-box-list-id")); // Find a web element
 Select selectObject = new Select(selectElement); // Initialize Select object
+```
+
+* [To cover] Check if multiple options are selected
+```java
+Boolean doesThisAllowMultipleSelections = selectObject.isMultiple();
+```
+
+* [To cover] Get all available options and store it to a variable
+```java
+List<WebElement> allAvailableOptions = selectObject.getOptions();
+```
+
+* [To cover] Get the first *selected* option and store it to a variable
+```java
+WebElement firstSelectedOption = selectObject.getFirstSelectedOption();
+```
+
+* [To cover] Get all *selected* options and store it to a variable
+```java
+List<WebElement> allSelectedOptions = selectObject.getAllSelectedOptions();
 ```
 
 * [To cover] Select option by index
@@ -596,26 +615,6 @@ selectObject.deselectByVisibleText("Bread");
 * [To cover] Deselect all options
 ```java
 selectObject.deselectAll();
-```
-
-* [To cover] Get all *selected* options and store it to a variable
-```java
-List<WebElement> allSelectedOptions = selectObject.getAllSelectedOptions();
-```
-
-* [To cover] Get the first *selected* option and store it to a variable
-```java
-WebElement firstSelectedOption = selectObject.getFirstSelectedOption();
-```
-
-* [To cover] Get all available options and store it to a variable
-```java
-List<WebElement> allAvailableOptions = selectObject.getOptions();
-```
-
-* [To cover] Check if multiple options are selected
-```java
-Boolean doesThisAllowMultipleSelections = selectObject.isMultiple();
 ```
 
 ### Waits
