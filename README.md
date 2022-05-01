@@ -495,11 +495,6 @@ buttonElement.click();
 inputElement.sendKeys("some-text");
 ```
 
-* [Covered] Fill in input filed with the data
-```java
-inputElement.sendKeys("some-text");
-```
-
 * [Covered] Clear data in the input filed
 ```java
 inputElement.clear();

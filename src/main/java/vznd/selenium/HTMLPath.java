@@ -16,6 +16,7 @@ public class HTMLPath {
     public static final String COOKIES = "http://localhost:8080/cookies";
     public static final String FINDERS = "http://localhost:8080/finders";
     public static final String INFORMATION = "http://localhost:8080/information";
+    public static final String INTERACTIONS = "http://localhost:8080/interactions";
     public static final String IMPLICIT_WAIT = "http://localhost:8080/implicit-wait";
 
 }

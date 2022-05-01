@@ -16,4 +16,9 @@ public class ElementsController {
         return "elements-information";
     }
 
+    @GetMapping("/interactions")
+    public String interactions() {
+        return "elements-interactions";
+    }
+
 }
