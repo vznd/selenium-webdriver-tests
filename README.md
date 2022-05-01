@@ -723,16 +723,12 @@ such as NoSuchElementException when searching for an element on the page.
 
 * [To cover] Waiting 30 seconds for an element to be present on the page, checking for its presence once every 5 seconds
 ```java
-Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+Wait<WebDriver> wait = new FluentWait<>(driver)
         .withTimeout(Duration.ofSeconds(30))
         .pollingEvery(Duration.ofSeconds(5))
         .ignoring(NoSuchElementException.class);
 
-WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
-    public WebElement apply(WebDriver driver) {
-        return driver.findElement(By.id("foo"));
-    }
-});
+WebElement foo = wait.until(driver -> driver.findElement(By.id("foo")));
 ```
 
 ### Actions API

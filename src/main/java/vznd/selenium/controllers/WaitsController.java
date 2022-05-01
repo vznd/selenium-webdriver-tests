@@ -10,4 +10,10 @@ public class WaitsController {
     public String implicitWait() {
         return "implicit-wait";
     }
+
+    @GetMapping("/fluent-wait")
+    public String fluentWait() {
+        return "fluent-wait";
+    }
+
 }
