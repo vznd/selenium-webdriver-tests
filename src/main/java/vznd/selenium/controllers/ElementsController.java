@@ -26,4 +26,9 @@ public class ElementsController {
         return "elements-select-lists";
     }
 
+    @GetMapping("/traditional-locators")
+    public String traditionalLocators() {
+        return "elements-traditional-locators";
+    }
+
 }
