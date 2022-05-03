@@ -1,5 +1,7 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -25,6 +27,15 @@ public class WindowsTest extends BaseTest {
         int expectedNumberOfHandledWindows = 3;
         Assert.assertEquals(windows.size(), expectedNumberOfHandledWindows ,
                 "The number of opened windows was not " + expectedNumberOfHandledWindows + "!");
+    }
+
+    @Test
+    public void switchToWindowById() {
+        String firstTab = String.valueOf(driver.getWindowHandles().toArray()[0]);
+        driver.switchTo().window(firstTab);
+        WebElement button = driver.findElement(By.id("green-button"));
+        Assert.assertTrue(button.isDisplayed(),
+                "The button was not displayed after switching to the first tab!");
     }
 
     @Test // COMING SOON

@@ -282,7 +282,7 @@ String originalWindow = driver.getWindowHandle();
 Set<String> allWindows = driver.getWindowHandles();
 ```
 
-* [To cover] Switch to a different window handle
+* [Covered] Switch to a different window handle
 ```java
 driver.switchTo().window(windowHandleId); // where windowHandleId is a String with handleId 
 ```
