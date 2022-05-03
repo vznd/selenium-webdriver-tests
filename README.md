@@ -277,7 +277,7 @@ in a single session.
 String originalWindow = driver.getWindowHandle();
 ```
 
-* [To cover] Get all opened windows identifiers and store it to a variable
+* [Covered] Get all opened windows identifiers and store it to a variable
 ```java
 Set<String> allWindows = driver.getWindowHandles();
 ```

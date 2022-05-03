@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Set;
+
 public class WindowsTest extends BaseTest {
 
     @BeforeMethod
@@ -14,16 +16,15 @@ public class WindowsTest extends BaseTest {
     @Test
     public void getWindowHandle() {
         String window = driver.getWindowHandle();
-        Assert.assertNotNull(window, "The amount of windows did not match expected!");
+        Assert.assertNotNull(window, "The window was not opened!");
     }
 
-    @Test // COMING SOON
-    public void getAllWindowHandles() {
-        /*
-        STR:
-        1) Get all window handles
-        2) Assert the size
-         */
+    @Test
+    public void getWindowHandles() {
+        Set<String> windows = driver.getWindowHandles();
+        int expectedNumberOfHandledWindows = 3;
+        Assert.assertEquals(windows.size(), expectedNumberOfHandledWindows ,
+                "The number of opened windows was not " + expectedNumberOfHandledWindows + "!");
     }
 
     @Test // COMING SOON
