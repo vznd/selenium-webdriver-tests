@@ -1,5 +1,6 @@
 package vznd.selenium;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -139,13 +140,18 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void maximizeWindow() {
-        /*
-        STR:
-        1) Maximize Window
-        2) Assert window size
-         */
+        Dimension defaultSize = driver.manage().window().getSize();
+        driver.manage().window().maximize();
+        Dimension maximizeSize = driver.manage().window().getSize();
+
+        boolean wasWidthChanged = defaultSize.getWidth() < maximizeSize.getWidth();
+        Assert.assertTrue(wasWidthChanged,
+                "The window width after enabling maximize was less or equal to window height before!");
+        boolean wasHeightChanged = defaultSize.getHeight() < maximizeSize.getHeight();
+        Assert.assertTrue(wasHeightChanged,
+                "The window height after enabling maximize was less or equal to window height before!");
     }
 
     @Test // COMING SOON
