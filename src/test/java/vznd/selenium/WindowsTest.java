@@ -1,8 +1,14 @@
 package vznd.selenium;
 
+<<<<<<< Updated upstream
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+=======
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+>>>>>>> Stashed changes
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -31,6 +37,7 @@ public class WindowsTest extends BaseTest {
     }
 
     @Test
+<<<<<<< Updated upstream
     public void switchToWindowById() {
         String firstTab = String.valueOf(driver.getWindowHandles().toArray()[0]);
         driver.switchTo().window(firstTab);
@@ -40,13 +47,16 @@ public class WindowsTest extends BaseTest {
     }
 
     @Test // COMING SOON
+=======
+>>>>>>> Stashed changes
     public void waitForCertainAmountOfWindowsToBeOpened() {
-        /*
-        STR:
-        1) Create WebDriverWait
-        2) Create ExpectedCondition
-        3) Wait until Expected condition
-         */
+        long timeout = 5;
+        int expectedNumberOfWindows = 3;
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        ExpectedCondition<Boolean> numberOfWindows = ExpectedConditions.numberOfWindowsToBe(expectedNumberOfWindows);
+        boolean isExpectedNumberOfWindowsOpened = wait.until(numberOfWindows);
+        Assert.assertTrue(isExpectedNumberOfWindowsOpened,
+                "The number of opened windows was not " + expectedNumberOfWindows + "!");
     }
 
     @Test // COMING SOON

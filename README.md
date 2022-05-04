@@ -287,7 +287,7 @@ Set<String> allWindows = driver.getWindowHandles();
 driver.switchTo().window(windowHandleId); // where windowHandleId is a String with handleId 
 ```
 
-* [To cover] Wait for certain amount of windows to be opened
+* [Covered] Wait for certain amount of windows to be opened
 ```java
 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1)); // Define a WebDriverWait
 ExpectedCondition<Boolean> expectedCondition = numberOfWindowsToBe(2); // Define expected condition calling numberOfWindowsToBe static method
