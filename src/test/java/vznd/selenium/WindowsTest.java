@@ -1,9 +1,6 @@
 package vznd.selenium;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -203,15 +200,13 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void executeJavascriptOpenAlert() {
-        /*
-        STR:
-        1) Initialize JavascriptExecutor
-        2) Initialize a String with script which opens alert in browser
-        3) Execute script
-        4) Assert alert is open
-         */
+        driver.switchTo().defaultContent();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("alert('hello world')");
+        Alert alert = driver.switchTo().alert();
+        Assert.assertNotNull(alert, "The alert was not opened");
     }
 
     @Test
