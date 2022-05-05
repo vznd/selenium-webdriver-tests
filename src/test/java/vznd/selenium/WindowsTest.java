@@ -1,14 +1,11 @@
 package vznd.selenium;
 
-<<<<<<< Updated upstream
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-=======
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
->>>>>>> Stashed changes
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -37,7 +34,6 @@ public class WindowsTest extends BaseTest {
     }
 
     @Test
-<<<<<<< Updated upstream
     public void switchToWindowById() {
         String firstTab = String.valueOf(driver.getWindowHandles().toArray()[0]);
         driver.switchTo().window(firstTab);
@@ -46,9 +42,7 @@ public class WindowsTest extends BaseTest {
                 "The button was not displayed after switching to the first tab!");
     }
 
-    @Test // COMING SOON
-=======
->>>>>>> Stashed changes
+    @Test
     public void waitForCertainAmountOfWindowsToBeOpened() {
         long timeout = 5;
         int expectedNumberOfWindows = 3;
@@ -97,16 +91,19 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void getWindowDimensionsFromObject() {
-        /*
-        STR:
-        1) Get window size and store to a Dimension variable
-        2) Get width from the Dimension variable
-        3) Assert width is NOT less than 1000
-        4) Get window height from the Dimension variable
-        5) Assert height is NOT less than 800
-         */
+        Dimension windowSize = driver.manage().window().getSize();
+
+        int minWidthValue = 1000;
+        boolean isWidthInExpectedRange = windowSize.getWidth() > minWidthValue;
+        Assert.assertTrue(isWidthInExpectedRange,
+                "The width of window was not more than " + minWidthValue + "!");
+
+        int minHeightValue = 800;
+        boolean isHeightInExpectedRange = windowSize.getHeight() > minHeightValue;
+        Assert.assertTrue(isHeightInExpectedRange,
+                "The height of window was not more than " + minHeightValue + "!");
     }
 
     @Test // COMING SOON

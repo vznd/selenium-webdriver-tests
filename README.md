@@ -315,7 +315,7 @@ int width = driver.manage().window().getSize().getWidth();
 int height = driver.manage().window().getSize().getHeight();
 ```
 
-* [To cover] Store dimensions in a variable and query them from the object
+* [Covered] Store dimensions in a variable and query them from the object
 ```java
 Dimension size = driver.manage().window().getSize();
 int width = size.getWidth();
