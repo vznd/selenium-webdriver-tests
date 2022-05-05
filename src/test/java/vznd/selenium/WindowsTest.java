@@ -95,15 +95,19 @@ public class WindowsTest extends BaseTest {
                 "The number of opened tabs was not " + expectedNumberOfWindows + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void getWindowDimensionsIndividually() {
-        /*
-        STR:
-        1) Get window width
-        2) Assert width is NOT less than 1000
-        3) Get window height
-        4) Assert height is NOT less than 800
-         */
+        int actualWidth = driver.manage().window().getSize().getWidth();
+        int minWidthValue = 1000;
+        boolean isWidthInExpectedRange = actualWidth > minWidthValue;
+        Assert.assertTrue(isWidthInExpectedRange,
+                "The width of window was not more than " + minWidthValue + "!");
+
+        int actualHeight = driver.manage().window().getSize().getHeight();
+        int minHeightValue = 800;
+        boolean isHeightInExpectedRange = actualHeight > minHeightValue;
+        Assert.assertTrue(isHeightInExpectedRange,
+                "The height of window was not more than " + minHeightValue + "!");
     }
 
     @Test
