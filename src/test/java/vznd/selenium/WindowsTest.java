@@ -141,15 +141,15 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void getWindowXAndYPositionFromObject() {
-        /*
-        STR:
-        1) Create a Position object and store it to a variable
-        2) Get X from its object
-        3) Get Y from its object
-        4) Assert something
-         */
+        Point position = driver.manage().window().getPosition();
+
+        int expectedX = 22;
+        Assert.assertEquals(position.getX(), expectedX, "The X position of window was not: " + expectedX + "!");
+
+        int expectedY = 47;
+        Assert.assertEquals(position.getY(), expectedY, "The Y position of window was not: " + expectedY + "!");
     }
 
     @Test
