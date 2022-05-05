@@ -8,6 +8,8 @@
             <class name="vznd.selenium.BrowserNavigationTest"/>
             <class name="vznd.selenium.KeyboardActionsTest"/>
             <class name="vznd.selenium.WindowsTest"/>
+            <class name="vznd.selenium.ElementsTraditionalLocatorsTest"/>
+            <class name="vznd.selenium.ElementsInformationTest"/>
         </classes>
     </test>
 </suite>

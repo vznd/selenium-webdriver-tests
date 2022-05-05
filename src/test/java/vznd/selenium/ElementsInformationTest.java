@@ -1,5 +1,8 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -10,14 +13,11 @@ public class ElementsInformationTest extends BaseTest {
         driver.get(HTMLPath.INFORMATION);
     }
 
-    @Test // COMING SOON
+    @Test
     public void isDisplayed() {
-        /*
-        STR:
-        1) Find green-button and store it to a variable
-        2) Call isDisplayed() method and store a result to a variable
-        3) Assert boolean variable is true
-         */
+        WebElement submitButton = driver.findElement(By.id("submit-button"));
+        boolean isSubmitButtonDisplayed = submitButton.isDisplayed();
+        Assert.assertTrue(isSubmitButtonDisplayed, "The 'submitButton' was not displayed!");
     }
 
     @Test // COMING SOON
