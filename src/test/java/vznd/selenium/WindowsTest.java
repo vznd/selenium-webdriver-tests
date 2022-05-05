@@ -1,12 +1,10 @@
 package vznd.selenium;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -210,15 +208,17 @@ public class WindowsTest extends BaseTest {
         Assert.assertTrue(isFileExists, "The screenshot was not found!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void takeScreenshotOfAnElement() {
-        /*
-        STR:
-        1) Find an element
-        2) Take a screenshot
-        3) Save file at some location (target/test-screenshots/)
-        4) Assert file exists in that location
-         */
+        WebElement element = driver.findElement(By.cssSelector("h1"));
+        File scrFile = element.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File("./image.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        boolean isFileExists = Files.exists(Path.of("./image.png"));
+        Assert.assertTrue(isFileExists, "The screenshot was not found");
     }
 
     @Test
