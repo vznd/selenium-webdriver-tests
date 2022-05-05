@@ -152,14 +152,16 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void setWindowPosition() {
-        /*
-        STR:
-        1) Initialize a Position object with specified X and Y
-        2) Set position
-        3) Assert Position was changed
-         */
+        int expectedY = 500;
+        int expectedX = 300;
+        Point position = new Point(expectedX, expectedY);
+
+        driver.manage().window().setPosition(position);
+
+        Assert.assertEquals(position.getX(), expectedX, "The X position of window was not: " + expectedX + "!");
+        Assert.assertEquals(position.getY(), expectedY, "The Y position of window was not: " + expectedY + "!");
     }
 
     @Test
