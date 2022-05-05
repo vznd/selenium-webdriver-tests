@@ -4,10 +4,18 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Set;
 
 public class WindowsTest extends BaseTest {
@@ -15,6 +23,17 @@ public class WindowsTest extends BaseTest {
     @BeforeMethod
     public void preCondition() {
         driver.get(HTMLPath.WINDOWS);
+    }
+
+    @AfterTest
+    public void deleteScreenshot() {
+        if (Files.exists(Path.of("./image.png"))) {
+            try {
+                Files.delete(Path.of("./image.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Test
@@ -179,14 +198,16 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void takeScreenshotOfAWindow() {
-        /*
-        STR:
-        1) Take a screenshot
-        2) Save file at some location (target/test-screenshots/)
-        3) Assert file exists in that location
-         */
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File("./image.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        boolean isFileExists = Files.exists(Path.of("./image.png"));
+        Assert.assertTrue(isFileExists, "The screenshot was not found!");
     }
 
     @Test // COMING SOON
