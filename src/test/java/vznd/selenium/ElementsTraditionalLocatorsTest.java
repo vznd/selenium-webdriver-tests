@@ -37,13 +37,10 @@ public class ElementsTraditionalLocatorsTest extends BaseTest {
         Assert.assertNotNull(clickMeLink, "The 'Click me' link was not found!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void linkText() {
-        /*
-        STR:
-        1) Find element by linkText and store it to a variable
-        2) Assert not null
-         */
+        WebElement clickMeLink = driver.findElement(By.linkText("Click me"));
+        Assert.assertNotNull(clickMeLink, "The 'Click me' link was not found!");
     }
 
     @Test // COMING SOON
