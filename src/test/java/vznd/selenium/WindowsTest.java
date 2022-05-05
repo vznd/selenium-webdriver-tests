@@ -131,14 +131,15 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void getWindowXAndYPositionIndividually() {
-        /*
-        STR:
-        1) Get X position and store it to a variable
-        2) Get Y position and store it to a variable
-        3) Assert something
-         */
+        int actualX = driver.manage().window().getPosition().getX();
+        int expectedX = 22;
+        Assert.assertEquals(actualX, expectedX, "The X position of window was not: " + expectedX + "!");
+
+        int actualY = driver.manage().window().getPosition().getY();
+        int expectedY = 47;
+        Assert.assertEquals(actualY, expectedY, "The Y position of window was not: " + expectedY + "!");
     }
 
     @Test
