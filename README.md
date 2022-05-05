@@ -357,7 +357,7 @@ driver.manage().window().maximize();
 driver.manage().window().minimize();
 ```
 
-* [Out of scope] Enter fullscreen
+* [Covered] Enter fullscreen
 ```java
 driver.manage().window().fullscreen();
 ```

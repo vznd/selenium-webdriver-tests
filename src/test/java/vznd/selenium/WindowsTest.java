@@ -68,24 +68,6 @@ public class WindowsTest extends BaseTest {
                 "The number of opened windows was not " + expectedNumberOfWindows + "!");
     }
 
-    @Test // COMING SOON
-    public void switchToNewTab() {
-        /*
-        STR:
-        1) Switch to a new tab
-        2) Assert current url is about:blank
-         */
-    }
-
-    @Test // COMING SOON
-    public void switchToNewWindow() {
-        /*
-        STR:
-        1) Switch to a window
-        2) Assert current url is about:blank
-         */
-    }
-
     @Test
     public void closeTab() {
         driver.close();
@@ -190,24 +172,18 @@ public class WindowsTest extends BaseTest {
                 "The window height after enabling maximize was less or equal to window height before!");
     }
 
-    @Test // COMING SOON
-    public void minimizeWindow() {
-        /*
-        STR:
-        1) Maximize Window
-        2) Assert window size
-        3) Minimize Window
-        4) Assert window size
-         */
-    }
-
-    @Test // COMING SOON
+    @Test
     public void enterFullscreen() {
-        /*
-        STR:
-        1) Enter fullscreen
-        2) Assert window size
-         */
+        Dimension defaultSize = driver.manage().window().getSize();
+        driver.manage().window().fullscreen();
+        Dimension fullscreenSize = driver.manage().window().getSize();
+
+        boolean wasHeightChanged = defaultSize.getHeight() < fullscreenSize.getHeight();
+        Assert.assertTrue(wasHeightChanged,
+                "The window height after enabling full screen was less or equal to window height before!");
+        boolean wasWidthChanged = defaultSize.getWidth() < fullscreenSize.getWidth();
+        Assert.assertTrue(wasWidthChanged,
+                "The window width after enabling full screen was less or equal to window width before!");
     }
 
     @Test
