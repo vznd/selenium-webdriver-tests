@@ -1,5 +1,8 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -10,13 +13,10 @@ public class ElementsTraditionalLocatorsTest extends BaseTest {
         driver.get(HTMLPath.TRADITIONAL_LOCATORS);
     }
 
-    @Test // COMING SOON
+    @Test
     public void className() {
-        /*
-        STR:
-        1) Find element by className and store it to a variable
-        2) Assert not null
-         */
+        WebElement clickMeLink = driver.findElement(By.className("green-btn"));
+        Assert.assertNotNull(clickMeLink, "The 'Click me' link was not found!");
     }
 
     @Test // COMING SOON
