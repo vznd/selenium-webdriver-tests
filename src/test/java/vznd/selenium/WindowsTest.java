@@ -1,7 +1,8 @@
 package vznd.selenium;
 
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -213,29 +214,16 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void executeJavascriptClickOnElement() {
-        /*
-        STR:
-        1) Initialize JavascriptExecutor
-        2) Find a Gmail button element
-        3) Initialize a String with script which clicks on element
-        4) Execute script
-        5) Assert gmail page is open
-         */
-    }
+        driver.switchTo().defaultContent();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        WebElement button = driver.findElement(By.id("green-button"));
+        js.executeScript("arguments[0].click();", button);
 
-    @Test // COMING SOON
-    public void printPage() {
-        /*
-        STR:
-        1) Define PrintsPage object
-        2) Define PrintOptions
-        3) Set a range of pages for printing
-        4) Invoke print method and store the result in a Pdf variable
-        5) Invoke a getContent method and store the result in a String variable
-        6) Assert content match expected
-         */
+        String expectedUrl = HTMLPath.SIMPLE_ALERT;
+        String actualUrl = driver.getCurrentUrl();
+        Assert.assertEquals(actualUrl, expectedUrl, "The address of page was not '" + expectedUrl + "'!");
     }
 
 }
