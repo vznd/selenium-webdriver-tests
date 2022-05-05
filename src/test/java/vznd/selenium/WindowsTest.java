@@ -71,13 +71,13 @@ public class WindowsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void closeTab() {
-        /*
-        STR:
-        1) Close all tabs except one
-        2) Assert amount of opened tabs is 1
-         */
+        driver.close();
+        int actualNumberOfWindows = driver.getWindowHandles().size();
+        int expectedNumberOfWindows = 2;
+        Assert.assertEquals(actualNumberOfWindows, expectedNumberOfWindows,
+                "The number of opened tabs was not " + expectedNumberOfWindows + "!");
     }
 
     @Test // COMING SOON

@@ -294,22 +294,22 @@ ExpectedCondition<Boolean> expectedCondition = numberOfWindowsToBe(2); // Define
 wait.until(expectedCondition); // Perform wait until expected condition
 ```
 
-* [To cover] Create a new window switching to a new tab
+* [Out of scope] Create a new window switching to a new tab
 ```java
 driver.switchTo().newWindow(WindowType.TAB);
 ```
 
-* [To cover] Create a new window switching to a new window
+* [Out of scope] Create a new window switching to a new window
 ```java
 driver.switchTo().newWindow(WindowType.WINDOW);
 ```
 
-* [To cover] Close the tab or window
+* [Covered] Close the tab or window
 ```java
 driver.close();
 ```
 
-* [To cover] Get window size / dimensions individually
+* [Covered] Get window size / dimensions individually
 ```java
 int width = driver.manage().window().getSize().getWidth();
 int height = driver.manage().window().getSize().getHeight();
@@ -322,78 +322,73 @@ int width = size.getWidth();
 int height = size.getHeight();
 ```
 
-* [To cover] Set window size
+* [Covered] Set window size
 ```java
 Dimension dimension = new Dimension(1024, 768); // Create a new dimension object with specified height and width
 driver.manage().window().setSize(dimension); // Set window size
 ```
 
-* [To cover] Get window position / x, y coordinates individually
+* [Covered] Get window position / x, y coordinates individually
 ```java
 int x = driver.manage().window().getPosition().getX();
 int y = driver.manage().window().getPosition().getY();
 ```
 
-* [To cover] Store window position in a variable and query x, y coordinates from the object
+* [Covered] Store window position in a variable and query x, y coordinates from the object
 ```java
 Point position = driver.manage().window().getPosition();
 int x1 = position.getX();
 int y1 = position.getY();
 ```
 
-* [To cover] Set window position
+* [Covered] Set window position
 ```java
 Point position = new Point(0, 0); // Create a new position object with specified x and y
 driver.manage().window().setPosition(position); // Set position
 ```
 
-* [To cover] Maximize window
+* [Covered] Maximize window
 ```java
 driver.manage().window().maximize();
 ```
 
-* [To cover] Minimize window
+* [Out of scope] Minimize window
 ```java
 driver.manage().window().minimize();
 ```
 
-* [To cover] Enter fullscreen
+* [Out of scope] Enter fullscreen
 ```java
 driver.manage().window().fullscreen();
 ```
 
-* [To cover] Enter fullscreen
-```java
-driver.manage().window().fullscreen();
-```
-
-* [To cover] Take a screenshot of a window
+* [Covered] Take a screenshot of a window
 ```java
 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // Take a screenshot 
 FileUtils.copyFile(scrFile, new File("./image.png")); // Store it in the root directory with image.png name
 ```
 
-* [To cover] Take a screenshot of an element
+* [Covered] Take a screenshot of an element
 ```java
 WebElement element = driver.findElement(By.cssSelector("h1")); // Find an element
 File scrFile = element.getScreenshotAs(OutputType.FILE); // Take a screenshot
 FileUtils.copyFile(scrFile, new File("./image.png")); // Store it in the root directory with image.png name
 ```
 
-* [To cover] Execute a JavaScript
+* [Covered] Execute a JavaScript
 ```java
 JavascriptExecutor js = (JavascriptExecutor)driver; // Define a JavascriptExecutor
 js.executeScript("console.log('hello world')"); // Invoke the executeScript method and pass a script as a String argument
 ```
 
-* [To cover] Execute a JavaScript on a WebElement
+* [Covered] Execute a JavaScript on a WebElement
 ```java
 JavascriptExecutor js = (JavascriptExecutor)driver; // Define a JavascriptExecutor
 WebElement button = driver.findElement(By.name("btnLogin")); // Find a web element
 js.executeScript("arguments[0].click();", button); // Perform a click on a button with java script
 ```
 
-* [To cover] Print page
+* [Out of scope] Print page
 ```java
 PrintsPage printer = (PrintsPage) driver; // Define PrintsPage object
 PrintOptions printOptions = new PrintOptions(); // Define PrintOptions

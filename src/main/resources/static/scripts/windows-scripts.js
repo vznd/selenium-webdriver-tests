@@ -4,3 +4,7 @@ function openTabs() {
         window.open("/iframes", '_blank');
     }
 }
+
+function openSimpleAlert() {
+    window.open("/simple-alert","_self")
+}
