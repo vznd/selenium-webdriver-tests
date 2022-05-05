@@ -121,14 +121,21 @@ public class WindowsTest extends BaseTest {
                 "The height of window was not more than " + minHeightValue + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void setWindowSize() {
-        /*
-        STR:
-        1) Create a Dimension object with specified height and weight
-        2) Set window size
-        3) Assert window has the same size as was set
-         */
+        int width = 800;
+        int height = 500;
+        Dimension windowSize = new Dimension(width, height);
+        driver.manage().window().setSize(windowSize);
+
+        Dimension actualSize = driver.manage().window().getSize();
+        boolean isWidthInExpectedRange = actualSize.getWidth() == width;
+        Assert.assertTrue(isWidthInExpectedRange,
+                "The width of window was not " + width + "!");
+
+        boolean isHeightInExpectedRange = actualSize.getHeight() == height;
+        Assert.assertTrue(isHeightInExpectedRange,
+                "The height of window was not " + height + "!");
     }
 
     @Test
