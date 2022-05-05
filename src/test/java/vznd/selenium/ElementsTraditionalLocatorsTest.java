@@ -19,13 +19,10 @@ public class ElementsTraditionalLocatorsTest extends BaseTest {
         Assert.assertNotNull(clickMeLink, "The 'Click me' link was not found!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void cssSelector() {
-        /*
-        STR:
-        1) Find element by cssSelector and store it to a variable
-        2) Assert not null
-         */
+        WebElement clickMeLink = driver.findElement(By.cssSelector("a[class='green-btn']"));
+        Assert.assertNotNull(clickMeLink, "The 'Click me' link was not found!");
     }
 
     @Test // COMING SOON
