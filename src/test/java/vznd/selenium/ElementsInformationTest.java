@@ -20,13 +20,10 @@ public class ElementsInformationTest extends BaseTest {
         Assert.assertTrue(isSubmitButtonDisplayed, "The 'submitButton' was not displayed!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void isEnabled() {
-        /*
-        STR:
-        1) Find submit-button, call isEnabled, store it to a variable
-        2) Assert false
-         */
+        boolean isSubmitButtonEnabled = driver.findElement(By.id("submit-button")).isEnabled();
+        Assert.assertFalse(isSubmitButtonEnabled, "The 'submit' button was not displayed!");
     }
 
     @Test
