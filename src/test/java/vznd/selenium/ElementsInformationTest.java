@@ -53,14 +53,12 @@ public class ElementsInformationTest extends BaseTest {
                 "The background color of user form was not " + expectedFormBackgroundColor + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void getText() {
-        /*
-        STR:
-        1) Find form title, call getText, store it to a variable
-        2) Declare expected title
-        3) Assert equals
-         */
+        String actualUserFormTitleText = driver.findElement(By.id("form-title")).getText();
+        String expectedUserFormTitleText = "User Form";
+        Assert.assertEquals(actualUserFormTitleText, expectedUserFormTitleText,
+                "The 'user' form title text was not " + expectedUserFormTitleText + "!");
     }
 
 }
