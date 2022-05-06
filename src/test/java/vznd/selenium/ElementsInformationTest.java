@@ -29,13 +29,10 @@ public class ElementsInformationTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void isSelected() {
-        /*
-        STR:
-        1) Find agreement, call isSelected, store it to a variable
-        2) Assert false
-         */
+        boolean isAgreementCheckboxSelected = driver.findElement(By.id("agreement")).isSelected();
+        Assert.assertFalse(isAgreementCheckboxSelected, "The 'agreement' checkbox was selected!");
     }
 
     @Test // COMING SOON
