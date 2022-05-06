@@ -48,30 +48,12 @@ public class ElementsInformationTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
-    public void getRect() {
-        /*
-        STR:
-        1) Find form, call getRect, store it to a variable
-        2) Compare actualX not more than 8 and store it to a variable
-        3) Assert true
-        4) Compare actualY not more than 80 and store it to a variable
-        5) Assert true
-        6) Compare actualWidth not more than 920 and store it to a variable
-        7) Assert true
-        8) Compare actualHeight not more than 140 and store it to a variable
-        9) Assert true
-         */
-    }
-
-    @Test // COMING SOON
+    @Test
     public void getCssValue() {
-        /*
-        STR:
-        1) Find form, call getCssValue / background-color, store it to a variable
-        2) Declare expected background color
-        3) Assert equals
-         */
+        String actualFormBackgroundColor = driver.findElement(By.id("user-form")).getCssValue("background-color");
+        String expectedFormBackgroundColor = "rgba(154, 205, 50, 1)";
+        Assert.assertEquals(actualFormBackgroundColor, expectedFormBackgroundColor,
+                "The background color of user form was not " + expectedFormBackgroundColor + "!");
     }
 
     @Test // COMING SOON
