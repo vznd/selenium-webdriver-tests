@@ -32,14 +32,12 @@ public class ElementsInformationTest extends BaseTest {
         Assert.assertFalse(isAgreementCheckboxSelected, "The 'agreement' checkbox was selected!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void getTagName() {
-        /*
-        STR:
-        1) Find agreement, call getTagName, store result to a variable
-        2) Declare expected value
-        2) Assert equals
-         */
+        String actualAgreementCheckboxTagName = driver.findElement(By.id("agreement")).getTagName();
+        String expectedAgreementCheckboxTagName = "input";
+        Assert.assertEquals(actualAgreementCheckboxTagName, expectedAgreementCheckboxTagName,
+                "The tag name of the 'agreement' checkbox was not " + expectedAgreementCheckboxTagName + "!");
     }
 
     @Test
