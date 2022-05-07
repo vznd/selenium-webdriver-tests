@@ -625,18 +625,18 @@ called with a certain frequency until the timeout of the wait is elapsed.
 
 * [To cover] Initialize a WebDriverWait
 ```java
-WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+long timeout = 10;
+WebElement wait = new WebDriverWait(driver, timeout);
 ```
 
-* [To cover] Wait until element becomes clickable
+* [To cover] Wait for element visibility with ExpectedCondition
 ```java
-wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a/h3"));  
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
 ```
 
-* [To cover] Wait until element is found and store it to a variable
+* [To cover] Wait for element visibility with lambda
 ```java
-WebElement element = new WebDriverWait(driver, Duration.ofSeconds(3))
-          .until(driver -> driver.findElement(By.name("q")));
+WebElement element = wait.until(driver -> driver.findElement(By.tagName("h1")));
 ```
 
 **Expected conditions:**
@@ -650,8 +650,6 @@ WebElement element = new WebDriverWait(driver, Duration.ofSeconds(3))
 | attributeToBe(By locator, java.lang.String attribute, java.lang.String value)             | An expectation for checking WebElement with given locator has attribute with a specific value            |
 | attributeToBe(WebElement element, java.lang.String attribute, java.lang.String value)     | An expectation for checking given WebElement has attribute with a specific value                         |
 | attributeToBeNotEmpty(WebElement element, java.lang.String attribute                      | An expectation for checking WebElement any non empty value for given attribute                           |
-| domAttributeToBe(WebElement element, java.lang.String attribute, java.lang.String value)  | An expectation for checking given WebElement has DOM attribute with a specific value                     |
-| domPropertyToBe(WebElement element, java.lang.String property, java.lang.String value)    | An expectation for checking given WebElement has DOM property with a specific value                      |
 | elementSelectionStateToBe(By locator, boolean selected)                                   | An expectation for checking if the given element is selected                                             |
 | elementSelectionStateToBe(WebElement element, boolean selected)                           | An expectation for checking if the given element is selected                                             |
 | elementToBeClickable(By locator)                                                          | An expectation for checking an element is visible and enabled such that you can click it                 |
@@ -700,6 +698,14 @@ WebElement element = new WebDriverWait(driver, Duration.ofSeconds(3))
 | visibilityOfElementLocated(By locator)                                                    | An expectation for checking that an element is present on the DOM of a page and visible                  |
 | visibilityOfNestedElementsLocatedBy(By parent, By childLocator)                           | An expectation for checking child WebElement as a part of parent element to be visible                   |
 | visibilityOfNestedElementsLocatedBy(WebElement element, By childLocator)                  | An expectation for checking child WebElement as a part of parent element to be visible                   |
+
+**Out of the scope:**
+
+| Method                                                                                    | Description                                                                                              |
+|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| domAttributeToBe(WebElement element, java.lang.String attribute, java.lang.String value)  | An expectation for checking given WebElement has DOM attribute with a specific value                     |
+| domPropertyToBe(WebElement element, java.lang.String property, java.lang.String value)    | An expectation for checking given WebElement has DOM property with a specific value                      |
+
 
 **Implicit wait:**
 

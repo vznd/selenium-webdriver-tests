@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class WaitsController {
 
+    @GetMapping("/explicit-wait")
+    public String explicitWait() {
+        return "explicit-wait";
+    }
+
     @GetMapping("/implicit-wait")
     public String implicitWait() {
         return "implicit-wait";

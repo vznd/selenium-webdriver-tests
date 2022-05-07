@@ -15,6 +15,26 @@ table {
     background-color: yellowgreen;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
+.presence-button {
+    display: none;
+}
+
+.wait-green-title {
+    background-color: lightgreen;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.wait-gray-title {
+    background-color: lightgray;
+    text-align: center;
+    margin-top: 100px;
+}
+
 #user-form {
     background-color: yellowgreen;
     height: 180px;
