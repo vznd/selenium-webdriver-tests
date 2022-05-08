@@ -1,5 +1,8 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,15 +23,12 @@ public class ElementsInteractionsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void clear() {
-        /*
-        STR:
-        1) Find full name and store it to a variable
-        2) Call clear from variable
-        3) Get attribute / value from variable
-        4) Assert is blank
-         */
+        WebElement fullNameInput = driver.findElement(By.id("full-name"));
+        fullNameInput.clear();
+        String actualFullNameInputValue = fullNameInput.getAttribute("value");
+        Assert.assertTrue(actualFullNameInputValue.isBlank(), "The 'full name' input field was not blank!");
     }
 
     @Test // COMING SOON
