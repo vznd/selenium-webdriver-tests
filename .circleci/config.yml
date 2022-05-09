@@ -34,9 +34,6 @@ jobs:
             unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
             export PATH=$CHROMEDRIVER_DIR:$PATH
       - run:
-          name: "Run application"
-          command: mvn spring-boot:run &
-      - run:
           name: "Run tests"
           command: mvn test
 
@@ -45,9 +42,6 @@ jobs:
 
       - store_artifacts:
           path: target/surefire-reports/junitreports
-
-      - store_artifacts:
-          path: target/screenshots
 
 workflows:
   default:
