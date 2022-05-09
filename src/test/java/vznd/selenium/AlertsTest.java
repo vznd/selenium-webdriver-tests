@@ -56,7 +56,7 @@ public class AlertsTest extends BaseTest {
         Assert.assertFalse(isAlertPresent, "The alert was present!");
 
         String actualUrl = driver.getCurrentUrl();
-        String expectedUrl = "https://www.google.com/";
+        String expectedUrl = HTMLPath.CLICK_AND_HOLD;
         Assert.assertEquals(actualUrl, expectedUrl, "The URL was not correct!");
     }
 
@@ -72,7 +72,7 @@ public class AlertsTest extends BaseTest {
         Assert.assertFalse(isAlertPresent, "The alert was present!");
 
         String actualURL = driver.getCurrentUrl();
-        String expectedUrl = "https://www.google.com/";
+        String expectedUrl = HTMLPath.CLICK_AND_HOLD;
         Assert.assertEquals(actualURL, expectedUrl, "The URL was not correct!");
     }
 

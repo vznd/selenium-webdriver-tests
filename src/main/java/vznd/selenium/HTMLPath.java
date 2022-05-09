@@ -15,10 +15,10 @@ public class HTMLPath {
     public static final String WINDOWS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/windows.html";
     public static final String COOKIES = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/cookies.html";
     public static final String FINDERS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/finders.html";
-    public static final String INFORMATION = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/information.html";
-    public static final String INTERACTIONS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/interactions.html";
-    public static final String SELECT_LISTS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/select-lists.html";
-    public static final String TRADITIONAL_LOCATORS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/traditional-locators.html";
+    public static final String INFORMATION = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/elements-information.html";
+    public static final String INTERACTIONS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/elements-interactions.html";
+    public static final String SELECT_LISTS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/elements-select-lists.html";
+    public static final String TRADITIONAL_LOCATORS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/elements-traditional-locators.html";
     public static final String EXPLICIT_WAIT = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/explicit-wait.html";
     public static final String IMPLICIT_WAIT = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/implicit-wait.html";
     public static final String FLUENT_WAIT = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/fluent-wait.html";
