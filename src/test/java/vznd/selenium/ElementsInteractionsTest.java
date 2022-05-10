@@ -28,17 +28,15 @@ public class ElementsInteractionsTest extends BaseTest {
         Assert.assertTrue(actualFullNameInputValue.isBlank(), "The 'full name' input field was not blank!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void sendKeys() {
-        /*
-        STR:
-        1) Find full name and store it to a variable
-        2) Call clear from variable
-        3) Declare full name to set to input, e.g. Corben Dallas
-        4) Send keys using Corben Dallas
-        5) Get attribute from variable / value
-        6) Assert equals
-         */
+        WebElement fullNameInputField = driver.findElement(By.id("full-name"));
+        fullNameInputField.clear();
+        String expectedFullName = "Corben Dallas";
+        fullNameInputField.sendKeys(expectedFullName);
+        String actualFullName = fullNameInputField.getAttribute("value");
+        Assert.assertEquals(actualFullName, expectedFullName,
+                "The 'full-name' was not " + expectedFullName + "!");
     }
 
 }
