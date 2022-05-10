@@ -1,18 +1,21 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ElementsSelectListsTest extends BaseTest {
 
+    public Select favouriteFood;
+
     @BeforeMethod
     public void preCondition() {
         driver.get(HTMLPath.SELECT_LISTS);
-        /*
-        STR:
-        1) Find a select element
-        2) Initialize Select object
-         */
+        WebElement foodList = driver.findElement(By.id("favourite-food"));
+        favouriteFood = new Select(foodList);
     }
 
     @Test // COMING SOON
@@ -35,15 +38,13 @@ public class ElementsSelectListsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void getFirstSelectedOption() {
-        /*
-        STR:
-        1) Select option by index
-        2) Get first selected option, get text and store it to a variable
-        3) Store expected selected option text to a variable
-        4) Assert equals
-         */
+        favouriteFood.selectByIndex(0);
+        String actualSelectedOption = favouriteFood.getFirstSelectedOption().getText();
+        String expectedSelectedOption = "Bread";
+        Assert.assertEquals(actualSelectedOption, expectedSelectedOption,
+                "The first selected option of 'favourite food' list was not " + expectedSelectedOption + "!");
     }
 
     @Test // COMING SOON
