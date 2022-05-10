@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
 import java.util.Set;
 
 public class WindowsTest extends BaseTest {
@@ -59,7 +60,7 @@ public class WindowsTest extends BaseTest {
 
     @Test
     public void waitForCertainAmountOfWindowsToBeOpened() {
-        long timeout = 5;
+        Duration timeout = Duration.ofSeconds(5);
         int expectedNumberOfWindows = 3;
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         ExpectedCondition<Boolean> numberOfWindows = ExpectedConditions.numberOfWindowsToBe(expectedNumberOfWindows);

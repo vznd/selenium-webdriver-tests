@@ -13,7 +13,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
         <testng.version>7.5</testng.version>
-        <selenium-java.version>3.141.59</selenium-java.version>
+        <selenium-java.version>4.1.4</selenium-java.version>
         <commons-io.version>2.11.0</commons-io.version>
     </properties>
 
