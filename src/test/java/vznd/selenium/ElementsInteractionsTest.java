@@ -13,14 +13,11 @@ public class ElementsInteractionsTest extends BaseTest {
         driver.get(HTMLPath.INTERACTIONS);
     }
 
-    @Test // COMING SOON
+    @Test
     public void click() {
-        /*
-        STR:
-        1) Find green-button and make a click
-        2) Find full name input field, call getAttribute / value, and store it to a variable
-        3) Assert is blank
-         */
+        driver.findElement(By.id("green-button")).click();
+        String fullNameInput = driver.findElement(By.id("full-name")).getAttribute("value");
+        Assert.assertTrue(fullNameInput.isBlank(), "The 'full name' input field was not blank!");
     }
 
     @Test

@@ -10,6 +10,7 @@
             <class name="vznd.selenium.WindowsTest"/>
             <class name="vznd.selenium.ElementsTraditionalLocatorsTest"/>
             <class name="vznd.selenium.ElementsInformationTest"/>
+            <class name="vznd.selenium.ElementsInteractionsTest"/>
         </classes>
     </test>
 </suite>
