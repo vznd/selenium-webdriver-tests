@@ -80,16 +80,14 @@ public class ElementsSelectListsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void selectByValue() {
-        /*
-        STR:
-        1) Define value and store it to a variable
-        2) Call selectByValue
-        3) Get first selected option, get text and store it to a variable
-        4) Define expected Option
-        5) Assert equals
-         */
+        String elementOfListValue = "cheese";
+        favouriteFood.selectByValue(elementOfListValue);
+        String actualSelectedOption = favouriteFood.getFirstSelectedOption().getText();
+        String expectedSelectedOption = "Cheese";
+        Assert.assertEquals(actualSelectedOption, expectedSelectedOption,
+                "The first selected option of 'favourite food' list was not " + expectedSelectedOption + "!");
     }
 
     @Test // COMING SOON
