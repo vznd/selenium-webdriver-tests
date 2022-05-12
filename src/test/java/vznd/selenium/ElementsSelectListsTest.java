@@ -66,16 +66,15 @@ public class ElementsSelectListsTest extends BaseTest {
                 "The first selected option of 'favourite food' was not " + expectedSelectedOptionText + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void deselectByIndex() {
-        /*
-        STR:
-        1) Select option by index
-        2) Deselect option by the same index
-        3) Get all selected options size and store it to a variable
-        4) Store expected selected options to a variable
-        5) Assert equals
-         */
+        favouriteFood.selectByIndex(1);
+        favouriteFood.deselectByIndex(1);
+        int actualSelectedOptionsAmount = favouriteFood.getAllSelectedOptions().size();
+        int expectedSelectedOptionsAmount = 0;
+        Assert.assertEquals(actualSelectedOptionsAmount, expectedSelectedOptionsAmount,
+                "The amount of selected options in the ‘favourite food’ select list was not "
+                        + expectedSelectedOptionsAmount + "!");
     }
 
     @Test
