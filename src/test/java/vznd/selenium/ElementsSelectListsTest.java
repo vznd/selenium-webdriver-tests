@@ -57,15 +57,13 @@ public class ElementsSelectListsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void selectByIndex() {
-        /*
-        STR:
-        1) Select by index 1
-        2) Get first selected option, get text from it and store it to a variable
-        3) Declare expected text
-        4) Assert equals
-         */
+        favouriteFood.selectByIndex(1);
+        String actualSelectedOptionText = favouriteFood.getFirstSelectedOption().getText();
+        String expectedSelectedOptionText = "Milk";
+        Assert.assertEquals(actualSelectedOptionText, expectedSelectedOptionText,
+                "The first selected option of 'favourite food' was not " + expectedSelectedOptionText + "!");
     }
 
     @Test // COMING SOON
