@@ -47,14 +47,13 @@ public class ElementsSelectListsTest extends BaseTest {
                 "The first selected option of 'favourite food' list was not " + expectedSelectedOption + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void getAllSelectedOptions() {
-        /*
-        STR:
-        1) Get all selected options, get its size and store it to a variable
-        2) Store expected selected options size to a variable
-        3) Assert equals
-         */
+        int actualSelectedOptionsAmount = favouriteFood.getAllSelectedOptions().size();
+        int expectedSelectedOptionsAmount = 0;
+        Assert.assertEquals(actualSelectedOptionsAmount, expectedSelectedOptionsAmount,
+                "The amount of selected options in the ‘favourite food’ select list was not "
+                        + expectedSelectedOptionsAmount + "!");
     }
 
     @Test
