@@ -102,16 +102,16 @@ public class WindowsTest extends BaseTest {
         int minWidthValue = 1000;
         int actualWidthValue = windowSize.getWidth();
         boolean isWidthInExpectedRange = actualWidthValue > minWidthValue;
-//        Assert.assertTrue(isWidthInExpectedRange,
-//                "The width of window was not more than " + minWidthValue + "!\n\n" +
-//                        "Actual window width: " + actualWidthValue);
+        Assert.assertTrue(isWidthInExpectedRange,
+                "The width of window was not more than " + minWidthValue + "!\n\n" +
+                        "Actual window width: " + actualWidthValue);
 
         int minHeightValue = 800;
         int actualHeightValue = windowSize.getHeight();
         boolean isHeightInExpectedRange = actualHeightValue > minHeightValue;
-//        Assert.assertTrue(isHeightInExpectedRange,
-//                "The height of window was not more than " + minHeightValue + "!\n\n" +
-//                        "Actual window height: " + actualHeightValue);
+        Assert.assertTrue(isHeightInExpectedRange,
+                "The height of window was not more than " + minHeightValue + "!\n\n" +
+                        "Actual window height: " + actualHeightValue);
     }
 
     @Test

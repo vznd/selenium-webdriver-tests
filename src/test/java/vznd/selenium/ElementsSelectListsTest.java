@@ -18,13 +18,10 @@ public class ElementsSelectListsTest extends BaseTest {
         favouriteFood = new Select(foodList);
     }
 
-    @Test // COMING SOON
+    @Test
     public void isMultiple() {
-        /*
-        STR:
-        1) Call isMultiple and store result to a variable
-        2) Assert true
-         */
+        boolean isMultiple = favouriteFood.isMultiple();
+        Assert.assertTrue(isMultiple, "The 'favourite food' select list was not multiple!");
     }
 
     @Test // COMING SOON
