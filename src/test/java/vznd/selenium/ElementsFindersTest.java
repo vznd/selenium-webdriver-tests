@@ -44,15 +44,12 @@ public class ElementsFindersTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void switchToActiveElement() {
-        /*
-        STR:
-        1) Find green-button and click on it
-        2) Switch to active element
-        3) Get text from its element
-        4) Assert the text match expected
-         */
+        driver.findElement(By.id("green-button")).click();
+        String actualText = driver.switchTo().activeElement().getText();
+        String expectedText = "Active";
+        Assert.assertEquals(actualText, expectedText, "The text of active element was not " + expectedText + "!");
     }
 
 }
