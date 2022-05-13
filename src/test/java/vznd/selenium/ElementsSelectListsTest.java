@@ -107,16 +107,15 @@ public class ElementsSelectListsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void deselectAll() {
-        /*
-        STR:
-        1) Select by index
-        2) Call deselectAll
-        3) Get all selected options, get its size and store it to a variable
-        4) Store expected selected options size to a variable
-        5) Assert equals
-         */
+        favouriteFood.selectByIndex(1);
+        favouriteFood.deselectAll();
+        int actualSelectedOptionsAmount = favouriteFood.getAllSelectedOptions().size();
+        int expectedSelectedOptionsAmount = 0;
+        Assert.assertEquals(actualSelectedOptionsAmount, expectedSelectedOptionsAmount,
+                "The amount of selected options in the ‘favourite food’ select list was not "
+                        + expectedSelectedOptionsAmount + "!");
     }
 
 }
