@@ -75,25 +75,24 @@ public class ElementsSelectListsTest extends BaseTest {
 
     @Test
     public void selectByValue() {
-        String elementOfListValue = "cheese";
-        favouriteFood.selectByValue(elementOfListValue);
+        String value = "cheese";
+        favouriteFood.selectByValue(value);
         String actualSelectedOption = favouriteFood.getFirstSelectedOption().getText();
         String expectedSelectedOption = "Cheese";
         Assert.assertEquals(actualSelectedOption, expectedSelectedOption,
                 "The first selected option of 'favourite food' list was not " + expectedSelectedOption + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void deselectByValue() {
-        /*
-        STR:
-        1) Define value and store it to a variable
-        2) Call selectByValue
-        3) Call deselectByValue
-        4) Get all selected options, get size and store it to a variable
-        5) Define expected amount of selected options
-        6) Assert equals
-         */
+        String value = "cheese";
+        favouriteFood.selectByValue(value);
+        favouriteFood.deselectByValue(value);
+        int actualSelectedOptionsAmount = favouriteFood.getAllSelectedOptions().size();
+        int expectedSelectedOptionsAmount = 0;
+        Assert.assertEquals(actualSelectedOptionsAmount, expectedSelectedOptionsAmount,
+                "The amount of selected options in the ‘favourite food’ select list was not "
+                        + expectedSelectedOptionsAmount + "!");
     }
 
     @Test
