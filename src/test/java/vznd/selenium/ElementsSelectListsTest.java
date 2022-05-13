@@ -7,6 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class ElementsSelectListsTest extends BaseTest {
 
     public Select favouriteFood;
@@ -24,15 +26,13 @@ public class ElementsSelectListsTest extends BaseTest {
         Assert.assertTrue(isMultiple, "The 'favourite food' select list was not multiple!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void getOptions() {
-        /*
-        STR:
-        1) Call getOptions and store result to a variable
-        2) Get size from options and store it to a variable
-        3) Store expected options amount to a variable
-        4) Assert equals
-         */
+        List<WebElement> favouriteFoodOptions = favouriteFood.getOptions();
+        int actualFavouriteFoodOptionsAmount = favouriteFoodOptions.size();
+        int expectedFavouriteFoodOptionsAmount = 3;
+        Assert.assertEquals(actualFavouriteFoodOptionsAmount, expectedFavouriteFoodOptionsAmount,
+                "The options amount of 'favourite food' list was not equals " + expectedFavouriteFoodOptionsAmount + "!");
     }
 
     @Test
