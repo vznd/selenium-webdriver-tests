@@ -31,14 +31,11 @@ public class ElementsFindersTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void findElementBasedOnParentLocator() {
-        /*
-        STR:
-        1) Find element by parent fruits ID and child fruit class
-        2) Get text from found element
-        3) Assert the first element(from fruits) on the page was found
-         */
+        String actualText = driver.findElement(By.cssSelector("#fruits .fruit")).getText();
+        String expectedText = "Apple";
+        Assert.assertEquals(actualText, expectedText, "The text of the first element was not " + expectedText + "!");
     }
 
     @Test // COMING SOON
