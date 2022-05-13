@@ -1,5 +1,8 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -10,14 +13,11 @@ public class ElementsFindersTest extends BaseTest {
         driver.get(HTMLPath.FINDERS);
     }
 
-    @Test // COMING SOON
+    @Test
     public void findFirstElementWithClass() {
-        /*
-        STR:
-        1) Find element by fruit class
-        2) Get text from found element
-        3) Assert the first element(from fruits) on the page was found
-         */
+        String actualText = driver.findElement(By.className("fruit")).getText();
+        String expectedText = "Apple";
+        Assert.assertEquals(actualText, expectedText, "The text of first element was not " + expectedText + "!");
     }
 
     @Test // COMING SOON
