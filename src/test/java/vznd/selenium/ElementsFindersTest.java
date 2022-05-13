@@ -20,15 +20,12 @@ public class ElementsFindersTest extends BaseTest {
         Assert.assertEquals(actualText, expectedText, "The text of first element was not " + expectedText + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void findElementBasedOnParentObject() {
-        /*
-        STR:
-        1) Find element by fruits ID
-        2) Find element from fruits element by class name fruit
-        3) Get text from found element
-        4) Assert the first element(from fruits) on the page was found
-         */
+        WebElement fruits = driver.findElement(By.id("fruits"));
+        String actualText = fruits.findElement(By.id("fruit")).getText();
+        String expectedText = "Apple";
+        Assert.assertEquals(actualText, expectedText, "The text of first element was not " + expectedText + "!");
     }
 
     @Test
