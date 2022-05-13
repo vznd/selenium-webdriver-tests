@@ -96,15 +96,14 @@ public class ElementsSelectListsTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void selectByVisibleText() {
-        /*
-        STR:
-        1) Define visible text and store it to a variable
-        2) Call selectByVisibleText
-        3) Get first selected option, get text and store it to a variable
-        4) Assert equals
-         */
+        String visibleText = "Cheese";
+        favouriteFood.selectByVisibleText(visibleText);
+        String actualSelectedOption = favouriteFood.getFirstSelectedOption().getText();
+        String expectedSelectedOption = "Cheese";
+        Assert.assertEquals(actualSelectedOption, expectedSelectedOption,
+                "The first selected option of 'favourite food' list was not " + expectedSelectedOption + "!");
     }
 
     @Test
