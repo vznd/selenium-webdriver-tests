@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class ElementsFindersTest extends BaseTest {
 
     @BeforeMethod
@@ -35,13 +37,13 @@ public class ElementsFindersTest extends BaseTest {
         Assert.assertEquals(actualText, expectedText, "The text of the first element was not " + expectedText + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void findAllElementsByTag() {
-        /*
-        STR:
-        1) Find element all elements that has <li> tag and store it to a variable
-        2) Assert the size of found elements match expected
-         */
+        List<WebElement> allElements = driver.findElements(By.tagName("li"));
+        int actualAmountOfElements = allElements.size();
+        int expectedAmountOfElements = 3;
+        Assert.assertEquals(actualAmountOfElements, expectedAmountOfElements,
+                "The amount of elements was not " + expectedAmountOfElements + "!");
     }
 
     @Test

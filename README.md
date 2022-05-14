@@ -450,28 +450,28 @@ By submitLocator = RelativeLocator.with(By.tagName("button")).below(By.id("email
   
 **Finders:**  
   
-* [To cover] Find the first element which has a class with name `tomatoes`
+* [Covered] Find the first element which has a class with name `tomatoes`
 ```java
 WebElement vegetable = driver.findElement(By.className("tomatoes"));
 ```
 
-* [To cover] Find a web element, based on a parent element using two objects
+* [Covered] Find a web element, based on a parent element using two objects
 ```java
 WebElement fruits = driver.findElement(By.id("fruits")); // Find a fruits element (parent in HTML)
 WebElement fruit = fruits.findElement(By.id("tomatoes")); // Find a tomatoes child element from the parent fruits element
 ```
 
-* [To cover] Find a web element, based on a parent element using two locators
+* [Covered] Find a web element, based on a parent element using two locators
 ```java
 WebElement fruit = driver.findElement(By.cssSelector("#fruits .tomatoes"));
 ```
 
-* [To cover] Find all elements on the page which has `<li>` tag
+* [Covered] Find all elements on the page which has `<li>` tag
 ```java
 List<WebElement> plants = driver.findElements(By.tagName("li"));
 ```
 
-* [To cover] Switch to the element which is currently active
+* [Covered] Switch to the element which is currently active
 ```java
 driver.switchTo().activeElement().getAttribute("title")
 ```
