@@ -22,14 +22,12 @@ public class MouseActionsTest extends BaseTest {
 
     @Test
     public void contextClick() {
-        /*
-        STR:
-        1) Open context click html
-        2) Find green-button
-        3) Define Actions object
-        4) Build action to doubleCLick on button and perform it
-        5) Assert an element with context menu assert it is displayed
-         */
+        driver.get(HTMLPath.CONTEXT_CLICK);
+        WebElement clickMeToSeeContextMenuButton = driver.findElement(By.id("green-button"));
+        Actions actions = new Actions(driver);
+        actions.contextClick(clickMeToSeeContextMenuButton).build().perform();
+        boolean isContextMenuDisplayed = driver.findElement(By.id("context-menu")).isDisplayed();
+        Assert.assertTrue(isContextMenuDisplayed, "The context menu was not displayed!");
     }
 
     @Test
