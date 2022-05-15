@@ -2,9 +2,9 @@
   
 [![CircleCI](https://circleci.com/bb/den44/selenium-webdriver-tests.svg?style=shield&circle-token=beec6688d1137f803b984f0bd3564ba6caaeeb9b)](https://app.circleci.com/pipelines/bitbucket/den44/selenium-webdriver-tests?branch=master&filter=all)
 
-This repository includes selenium tests examples. The SUT is a custom website which you can find in a 
-[selenium-app](https://github.com/vznd/selenium-app) repository.  
-  
+This repository includes usage of Selenium Web Driver methods. The latest version of Selenium is used in this project.
+
+The SUT is a custom website which you can find in a [selenium-app](https://github.com/vznd/selenium-app) repository. 
 This website is [hosted](http://selenium-app.s3-website.eu-central-1.amazonaws.com) with AWS S3.
 
 ## Overview
@@ -54,13 +54,9 @@ git clone https://github.com/vznd/selenium-webdriver-tests.git
 ```bash
 cd selenium-webdriver-tests
 ```
-
-4) Run spring boot application  
-```bash
-mvn spring-boot:run &
 ```
 
-5) Run tests  
+4) Run tests  
 ```bash
 mvn test
 ```
