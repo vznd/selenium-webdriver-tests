@@ -1,21 +1,23 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class MouseActionsTest extends BaseTest {
 
     @Test
     public void clickAndHold() {
-        /*
-        STR:
-        1) Open click and hold
-        2) Find green-button
-        3) Define Actions object
-        4) Build action to clickAndHold on button and perform it
-        5) Get actual background color of button and store it to a variable
-        6) Define expected background color, store it to a variable
-        7) Assert actual and expected equals
-         */
+        driver.get(HTMLPath.CLICK_AND_HOLD);
+        WebElement clickMeAndHoldButton = driver.findElement(By.id("green-button"));
+        Actions actions = new Actions(driver);
+        actions.clickAndHold(clickMeAndHoldButton).build().perform();
+        String actualButtonColor = clickMeAndHoldButton.getCssValue("background-color");
+        String expectedButtonColor = "rgba(255, 0, 0, 1)";
+        Assert.assertEquals(actualButtonColor, expectedButtonColor,
+                "The color of 'click me and hold' button was not " + expectedButtonColor + "!");
     }
 
     @Test
