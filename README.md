@@ -54,7 +54,6 @@ git clone https://github.com/vznd/selenium-webdriver-tests.git
 ```bash
 cd selenium-webdriver-tests
 ```
-```
 
 4) Run tests  
 ```bash
