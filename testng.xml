@@ -12,6 +12,7 @@
             <class name="vznd.selenium.ElementsInformationTest"/>
             <class name="vznd.selenium.ElementsInteractionsTest"/>
             <class name="vznd.selenium.ElementsFindersTest"/>
+            <class name="vznd.selenium.CookiesTest"/>
         </classes>
     </test>
 </suite>

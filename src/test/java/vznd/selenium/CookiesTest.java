@@ -1,5 +1,7 @@
 package vznd.selenium;
 
+import org.openqa.selenium.Cookie;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,17 +21,15 @@ public class CookiesTest extends BaseTest {
         driver.manage().deleteCookieNamed(COOKIE_KEY);
     }
 
-    @Test // COMING SOON
+    @Test
     public void addCookie() {
-        /*
-        STR:
-        1) Create a cookie and store it to a variable (COOKIE_KEY, COOKIE_VALUE)
-        2) Add a cookie
-        3) Assert a new cookie was added
-         */
+        Cookie cookie = new Cookie(COOKIE_KEY, COOKIE_VALUE);
+        driver.manage().addCookie(cookie);
+        Cookie actualCookie = driver.manage().getCookieNamed(COOKIE_KEY);
+        Assert.assertNotNull(actualCookie, "The cookie with name '" + COOKIE_KEY + "' was not added!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void getCookieByName() {
         /*
         1) Get cookie by name
