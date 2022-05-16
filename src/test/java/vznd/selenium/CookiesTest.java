@@ -31,10 +31,10 @@ public class CookiesTest extends BaseTest {
 
     @Test
     public void getCookieByName() {
-        /*
-        1) Get cookie by name
-        3) Assert cookie value
-         */
+        String actualCookieValue = driver.manage().getCookieNamed("token").getValue();
+        String expectedCookieValue = "Aoh_fBqPqArRR0BQM";
+        Assert.assertEquals(actualCookieValue, expectedCookieValue,
+                "The cookie value with key '" + COOKIE_KEY + "' was not '" + expectedCookieValue + "'!");
     }
 
     @Test // COMING SOON
