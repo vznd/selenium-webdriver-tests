@@ -49,14 +49,11 @@ public class MouseActionsTest extends BaseTest {
 
     @Test
     public void moveToElement() {
-        /*
-        STR:
-        1) Open move to element html
-        2) Find green-button and store it to a variable
-        3) Initialize Actions object
-        4) Perform move to element
-        5) Assert something
-         */
+        driver.get(HTMLPath.MOVE_TO_ELEMENT);
+        WebElement heyButton = driver.findElement(By.id("green-button"));
+        actions.moveToElement(heyButton).build().perform();
+        boolean isHeyButtonDisplayed = heyButton.isDisplayed();
+        Assert.assertTrue(isHeyButtonDisplayed, "The 'Hey' button was not displayed!");
     }
 
 }
