@@ -37,13 +37,12 @@ public class CookiesTest extends BaseTest {
                 "The cookie value with key '" + COOKIE_KEY + "' was not '" + expectedCookieValue + "'!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void getAllCookies() {
-        /*
-        STR:
-        1) Get all cookies
-        2) Assert cookies size match expected
-         */
+        int actualCookiesSize = driver.manage().getCookies().size();
+        int expectedCookiesSize = 2;
+        Assert.assertEquals(actualCookiesSize, expectedCookiesSize,
+                "The cookies size was not " + expectedCookiesSize + "!");
     }
 
     @Test // COMING SOON
