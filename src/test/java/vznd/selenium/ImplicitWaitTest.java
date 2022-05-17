@@ -1,7 +1,12 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class ImplicitWaitTest extends BaseTest {
 
@@ -12,14 +17,11 @@ public class ImplicitWaitTest extends BaseTest {
         driver.get(HTMLPath.IMPLICIT_WAIT);
     }
 
-    @Test // COMING SOON
-    public void implicitWat() {
-        /*
-        STR:
-        1) Make an implicit wait for TIMEOUT
-        2) Find green-button
-        3) Assert it is displayed
-         */
+    @Test
+    public void implicitWait() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
+        WebElement heyButton = driver.findElement(By.id("green-button"));
+        Assert.assertTrue(heyButton.isDisplayed(), "The 'Hey' button was not displayed!");
     }
 
 }

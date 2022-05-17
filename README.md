@@ -704,7 +704,7 @@ WebElement element = wait.until(driver -> driver.findElement(By.tagName("h1")));
 
 By implicitly waiting, WebDriver polls the DOM for a certain duration when trying to find any element.
 
-* [To cover] Implicit wait
+* [Covered] Implicit wait
 ```java
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 ```

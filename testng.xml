@@ -13,6 +13,7 @@
             <class name="vznd.selenium.ElementsInteractionsTest"/>
             <class name="vznd.selenium.ElementsFindersTest"/>
             <class name="vznd.selenium.CookiesTest"/>
+            <class name="vznd.selenium.ImplicitWaitTest"/>
         </classes>
     </test>
 </suite>
