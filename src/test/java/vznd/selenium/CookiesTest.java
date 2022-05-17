@@ -54,15 +54,15 @@ public class CookiesTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test
     public void deleteCookieByCookieObject() {
-        /*
-        STR:
-        1) Create a cookie and store it to a variable (COOKIE_KEY, COOKIE_VALUE)
-        2) Add a cookie
-        3) Delete a cookie by object
-        3) Assert cookie was deleted
-         */
+        Cookie cookie = new Cookie(COOKIE_KEY, COOKIE_VALUE);
+        driver.manage().addCookie(cookie);
+        driver.manage().deleteCookie(cookie);
+        int actualCookiesSize = driver.manage().getCookies().size();
+        int expectedCookiesSize = 2;
+        Assert.assertEquals(actualCookiesSize, expectedCookiesSize,
+                "The cookie was not deleted! The cookies size was not " + expectedCookiesSize + "!");
     }
 
     @Test // COMING SOON
