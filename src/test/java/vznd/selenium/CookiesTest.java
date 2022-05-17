@@ -45,13 +45,13 @@ public class CookiesTest extends BaseTest {
                 "The cookies size was not " + expectedCookiesSize + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void deleteCookieByName() {
-        /*
-        STR:
-        1) Delete a cookie by name
-        3) Assert cookie was deleted
-         */
+        driver.manage().deleteCookieNamed("token");
+        int actualCookiesSize = driver.manage().getCookies().size();
+        int expectedCookiesSize = 1;
+        Assert.assertEquals(actualCookiesSize, expectedCookiesSize,
+                "The cookie was not deleted! The cookies size was not " + expectedCookiesSize + "!");
     }
 
     @Test
