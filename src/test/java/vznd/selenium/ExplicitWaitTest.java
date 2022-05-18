@@ -14,7 +14,7 @@ public class ExplicitWaitTest extends BaseTest {
         /* STR: initialize WebDriverWait variable with TIMEOUT specified as class variable */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void waitWithExpectedCondition() {
         /*
         1) Wait unit visibility of h1 element and put result to a variable
@@ -22,7 +22,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void waitWithLambda() {
         /*
         STR:
@@ -31,7 +31,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void and() {
         /*
         STR:
@@ -43,7 +43,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void or() {
         /*
         STR:
@@ -55,7 +55,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void not() {
         /*
         STR:
@@ -66,7 +66,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void alertIsPresent() {
         /*
         STR:
@@ -76,7 +76,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void attributeContainsByLocator() {
         /*
         STR:
@@ -85,7 +85,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void attributeContainsByElement() {
         /*
         STR:
@@ -95,7 +95,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void attributeToBeByLocator() {
         /*
         STR:
@@ -104,7 +104,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void attributeToBeByElement() {
         /*
         STR:
@@ -114,7 +114,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void attributeToBeNotEmpty() {
         /*
         STR:
@@ -124,7 +124,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void elementSelectionStateToBeByLocator() {
         /*
         STR:
@@ -133,7 +133,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void elementSelectionStateToBeByElement() {
         /*
         STR:
@@ -143,7 +143,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void elementToBeSelectedByLocator() {
         /*
         STR:
@@ -152,7 +152,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void elementToBeSelectedByElement() {
         /*
         STR:
@@ -162,7 +162,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void elementToBeClickableByLocator() {
         /*
         STR:
@@ -171,7 +171,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void elementToBeClickableByElement() {
         /*
         STR:
@@ -181,7 +181,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void frameToBeAvailableAndSwitchToItByIntLocator() {
         /*
         STR:
@@ -191,7 +191,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void frameToBeAvailableAndSwitchToItByStringLocator() {
         /*
         STR:
@@ -201,7 +201,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void frameToBeAvailableAndSwitchToItByLocator() {
         /*
         STR:
@@ -211,7 +211,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void frameToBeAvailableAndSwitchToItByElement() {
         /*
         STR:
@@ -222,7 +222,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void invisibilityOf() {
         /*
         STR:
@@ -232,7 +232,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void invisibilityOfAllElementsList() {
         /*
         STR:
@@ -242,7 +242,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void invisibilityOfAllElementsWebElementArgs() {
         /*
         STR:
@@ -253,7 +253,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void invisibilityOfElementLocatedByLocator() {
         /*
         STR:
@@ -262,7 +262,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void invisibilityOfElementWithText() {
         /*
         STR:
@@ -271,7 +271,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void javaScriptThrowsNoExceptions() {
         /*
         STR:
@@ -281,7 +281,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void jsReturnsValue() {
         /*
         STR:
@@ -292,7 +292,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void numberOfWindowsToBe() {
         /*
         STR:
@@ -303,7 +303,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void presenceOfAllElementsLocatedBy() {
         /*
         STR:
@@ -313,7 +313,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void presenceOfElementLocated() {
         /*
         STR:
@@ -322,7 +322,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void presenceOfNestedElementLocatedBy() {
         /*
         STR:
@@ -332,7 +332,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void presenceOfNestedElementsLocatedBy() {
         /*
         STR:
@@ -341,7 +341,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void refreshed() {
         /*
         STR:
@@ -354,7 +354,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void statelessOf() {
         /*
         STR:
@@ -367,7 +367,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void textMatches() {
         /*
         STR:
@@ -377,7 +377,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void textToBe() {
         /*
         STR:
@@ -386,7 +386,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void textToBePresentInElement() {
         /*
         STR:
@@ -396,7 +396,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void textToBePresentInElementLocated() {
         /*
         STR:
@@ -405,7 +405,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void textToBePresentInElementValueByLocator() {
         /*
         STR:
@@ -414,7 +414,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void textToBePresentInElementValueByElement() {
         /*
         STR:
@@ -424,7 +424,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void titleContains() {
         /*
         STR:
@@ -433,7 +433,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void titleIs() {
         /*
         STR:
@@ -442,7 +442,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void urlContains() {
         /*
         STR:
@@ -451,7 +451,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void urlMatches() {
         /*
         STR:
@@ -460,7 +460,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void urlToBe() {
         /*
         STR:
@@ -469,7 +469,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void visibilityOf() {
         /*
         STR:
@@ -479,7 +479,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void visibilityOfAllElementsList() {
         /*
         STR:
@@ -490,7 +490,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void visibilityOfAllElementsArgs() {
         /*
         STR:
@@ -502,7 +502,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void visibilityOfAllElementsLocatedBy() {
         /*
         STR:
@@ -512,7 +512,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void visibilityOfElementLocated() {
         /*
         STR:
@@ -521,7 +521,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void visibilityOfNestedElementsLocatedByLocator() {
         /*
         STR:
@@ -532,7 +532,7 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void visibilityOfNestedElementsLocatedByElement() {
         /*
         STR:

@@ -17,7 +17,7 @@ public class ImplicitWaitTest extends BaseTest {
         driver.get(HTMLPath.IMPLICIT_WAIT);
     }
 
-    @Test
+    @Test(enabled = false)
     public void implicitWait() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
         WebElement heyButton = driver.findElement(By.id("green-button"));

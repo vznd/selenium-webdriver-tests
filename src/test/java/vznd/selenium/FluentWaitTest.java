@@ -13,7 +13,7 @@ public class FluentWaitTest extends BaseTest {
         driver.get(HTMLPath.FLUENT_WAIT);
     }
 
-    @Test // COMING SOON
+    @Test(enabled = false) // COMING SOON
     public void fluentWait() {
         /*
         STR:
