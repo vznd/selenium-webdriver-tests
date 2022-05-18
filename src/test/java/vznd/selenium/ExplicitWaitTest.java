@@ -1,17 +1,23 @@
 package vznd.selenium;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class ExplicitWaitTest extends BaseTest {
 
     public final long TIMEOUT = 10L;
-    /* STR: define WebDriverWait variable */
+    WebDriverWait wait;
 
     @BeforeMethod
     public void preCondition() {
         driver.get(HTMLPath.EXPLICIT_WAIT);
-        /* STR: initialize WebDriverWait variable with TIMEOUT specified as class variable */
+        wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
     }
 
     @Test(enabled = false) // COMING SOON
@@ -22,13 +28,10 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void waitWithLambda() {
-        /*
-        STR:
-        1) Wait unit h1 element is found using lambda and put result to a variable
-        2) Assert not null
-         */
+        WebElement header = wait.until(driver -> driver.findElement(By.tagName("h1")));
+        Assert.assertNotNull(header, "The 'Elements Explicit Wait' header was not displayed!");
     }
 
     @Test(enabled = false) // COMING SOON
