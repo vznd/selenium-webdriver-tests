@@ -2,6 +2,7 @@ package vznd.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -33,16 +34,14 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertNotNull(header, "The 'Elements Explicit Wait' header was not displayed!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void and() {
-        /*
-        STR:
-        1) Define ExpectedConditions.and(ExpectedConditions, ExpectedConditions) and put it to a variable with type ExpectedConditions<Boolean>
-           - The first condition should be a visibility of the on-button
-           - The seconds condition should be a visibility of the off-button
-        2) Wait until your "and" condition is met and put a result to a variable
-        3) Assert not null
-         */
+        ExpectedCondition<Boolean> conditionElementsVisability = ExpectedConditions.and(
+                ExpectedConditions.visibilityOfElementLocated(By.id("on-button")),
+                ExpectedConditions.visibilityOfElementLocated(By.id("off-button"))
+        );
+        boolean areOnAndOffButtonsVisible = wait.until(conditionElementsVisability);
+        Assert.assertTrue(areOnAndOffButtonsVisible, "The 'On' and 'Off' buttons were not visible!");
     }
 
     @Test(enabled = false) // COMING SOON
