@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import java.util.Set;
 
 public class CookiesTest extends BaseTest {
 
@@ -65,15 +66,14 @@ public class CookiesTest extends BaseTest {
                 "The cookie was not deleted! The cookies size was not " + expectedCookiesSize + "!");
     }
 
-    @Test // COMING SOON
+    @Test
     public void deleteAllCookies() {
-        /*
-        STR:
-        1) Get all cookies
-        2) Assert that size of cookies is NOT 0
-        3) Delete all cookies
-        4) Assert that size is 0
-         */
+        Set<Cookie> cookies = driver.manage().getCookies();
+        Assert.assertFalse(cookies.isEmpty(), "The cookies size was equal to 0!");
+        driver.manage().deleteAllCookies();
+        cookies = driver.manage().getCookies();
+        Assert.assertTrue(cookies.isEmpty(),
+                "The cookies were not deleted! The cookies size was " + cookies.size() + "!");
     }
 
 }
