@@ -1,5 +1,6 @@
 package vznd.selenium;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -65,14 +66,11 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void alertIsPresent() {
-        /*
-        STR:
-        1) Click on alert-button
-        2) Wait until alertIsPresent and put result to a variable
-        3) Assert not null
-         */
+        driver.findElement(By.id("alert-button")).click();
+        Alert isAlertPresent = wait.until(ExpectedConditions.alertIsPresent());
+        Assert.assertNotNull(isAlertPresent, "The alert was not present!");
     }
 
     @Test(enabled = false) // COMING SOON
