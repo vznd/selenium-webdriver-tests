@@ -44,16 +44,14 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(areOnAndOffButtonsVisible, "The 'On' and 'Off' buttons were not visible!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void or() {
-        /*
-        STR:
-        1) Define ExpectedConditions.or(ExpectedConditions, ExpectedConditions) and put it to a variable with type ExpectedConditions<Boolean>
-           - The first condition should be element on-button to be clickable
-           - The seconds condition should be element off-button to be clickable
-        2) Wait until your "or" condition is met and put a result to a variable
-        3) Assert not null
-         */
+        ExpectedCondition<Boolean> conditionElementsClickability = ExpectedConditions.or(
+                ExpectedConditions.elementToBeClickable(By.id("on-button")),
+                ExpectedConditions.elementToBeClickable(By.id("off-button"))
+        );
+        boolean areOnAndOffButtonsClickable = wait.until(conditionElementsClickability);
+        Assert.assertTrue(areOnAndOffButtonsClickable, "The 'On' and 'Off' buttons were not clickable!");
     }
 
     @Test(enabled = false) // COMING SOON
