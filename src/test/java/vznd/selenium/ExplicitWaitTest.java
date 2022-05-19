@@ -2,6 +2,7 @@ package vznd.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -20,12 +21,10 @@ public class ExplicitWaitTest extends BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void waitWithExpectedCondition() {
-        /*
-        1) Wait unit visibility of h1 element and put result to a variable
-        2) Assert not null
-         */
+        boolean isHeaderDisplayed = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))).isDisplayed();
+        Assert.assertTrue(isHeaderDisplayed, "The 'Elements Explicit Wait' header was not displayed!");
     }
 
     @Test
