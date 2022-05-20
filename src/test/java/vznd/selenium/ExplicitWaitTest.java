@@ -55,15 +55,13 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(areOnAndOffButtonsClickable, "The 'On' and 'Off' buttons were not clickable!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void not() {
-        /*
-        STR:
-        1) Define ExpectedConditions.not(ExpectedConditions) and put it to a variable with type ExpectedConditions<Boolean>
-           - The condition should be alertIsPresent()
-        2) Wait until your "not" condition is met and put a result to a variable
-        3) Assert not null
-         */
+        ExpectedCondition<Boolean> alertIsNotPresentCondition = ExpectedConditions.not(
+                ExpectedConditions.alertIsPresent()
+        );
+        boolean isAlertNotPresent = wait.until(alertIsNotPresentCondition);
+        Assert.assertTrue(isAlertNotPresent, "The alert was present!");
     }
 
     @Test
