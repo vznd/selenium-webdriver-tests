@@ -115,14 +115,11 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(isTitleMatch, "The title of 'I am a button' element was not 'I am a title!'!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void attributeToBeNotEmpty() {
-        /*
-        STR:
-        1) Find attr-button web element and store it to a variable
-        2) Wait until button contains a "title" attribute with the "I am a title!" value and store it to a variable
-        3) Assert true
-         */
+        WebElement attributeButton = driver.findElement(By.id("attr-button"));
+        boolean isTitleValueNotEmpty = wait.until(ExpectedConditions.attributeToBeNotEmpty(attributeButton, "title"));
+        Assert.assertTrue(isTitleValueNotEmpty, "The title of 'I am a button' element was empty!");
     }
 
     @Test(enabled = false) // COMING SOON
