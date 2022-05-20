@@ -122,13 +122,13 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(isTitleValueNotEmpty, "The title of 'I am a button' element was empty!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void elementSelectionStateToBeByLocator() {
-        /*
-        STR:
-        1) Wait until bread option is selected and store result to a variable
-        2) Assert true
-         */
+        boolean isBreadOptionSelected = wait.until(ExpectedConditions.elementSelectionStateToBe(
+                By.id("bread"),
+                true)
+        );
+        Assert.assertTrue(isBreadOptionSelected, "The 'bread' option was not selected!");
     }
 
     @Test
