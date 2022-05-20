@@ -94,13 +94,14 @@ public class ExplicitWaitTest extends BaseTest {
                 "The 'I am a button' element did not have a 'title' attribute that contains the 'am'!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void attributeToBeByLocator() {
-        /*
-        STR:
-        1) Wait until #attr-button has a "title" attribute with the "I am title!" value and store it to a variable
-        2) Assert true
-         */
+        boolean isTitleMatch = wait.until(ExpectedConditions.attributeToBe(
+                By.id("attr-button"),
+                "title",
+                "I am a title!")
+        );
+        Assert.assertTrue(isTitleMatch, "The title of 'I am a button' element was not 'I am a title!'!");
     }
 
     @Test(enabled = false) // COMING SOON
