@@ -73,13 +73,15 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertNotNull(isAlertPresent, "The alert was not present!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void attributeContainsByLocator() {
-        /*
-        STR:
-        1) Wait until #attr-button has a "title" attribute that contains the "title!" value and store it to a variable
-        2) Assert true
-         */
+        boolean isElementContainsTitle = wait.until(ExpectedConditions.attributeContains(
+                By.id("attr-button"),
+                "title",
+                "title!")
+        );
+        Assert.assertTrue(isElementContainsTitle,
+                "The 'I am a button' element did not have a 'title' attribute that contains 'title'!");
     }
 
     @Test
