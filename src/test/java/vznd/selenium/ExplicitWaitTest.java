@@ -82,14 +82,16 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void attributeContainsByElement() {
-        /*
-        STR:
-        1) Find attr-button web element and store it to a variable
-        2) Wait until button has a "title" attribute that contains the "am" value and store it to a variable
-        3) Assert true
-         */
+        WebElement attributeButton = driver.findElement(By.id("attr-button"));
+        boolean isElementContainsTitle = wait.until(ExpectedConditions.attributeContains(
+                attributeButton,
+                "title",
+                "am")
+        );
+        Assert.assertTrue(isElementContainsTitle,
+                "The 'I am a button' element did not have a 'title' attribute that contains the 'am'!");
     }
 
     @Test(enabled = false) // COMING SOON
