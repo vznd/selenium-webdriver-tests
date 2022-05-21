@@ -149,14 +149,13 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(isBreadOptionSelected, "The 'bread' option was not selected!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void elementToBeSelectedByElement() {
-        /*
-        STR:
-        1) Find bread element option and store it to a variable
-        2) Wait until bread option is selected and store result to a variable
-        3) Assert true
-         */
+        WebElement breadOption = driver.findElement(By.id("bread"));
+        boolean isBreadOptionSelected = wait.until(ExpectedConditions.elementToBeSelected(
+                breadOption)
+        );
+        Assert.assertTrue(isBreadOptionSelected, "The 'bread' option was not selected!");
     }
 
     @Test(enabled = false) // COMING SOON
