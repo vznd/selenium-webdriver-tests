@@ -22,5 +22,6 @@ public class HTMLPath {
     public static final String EXPLICIT_WAIT = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/explicit-wait.html";
     public static final String IMPLICIT_WAIT = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/implicit-wait.html";
     public static final String FLUENT_WAIT = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/fluent-wait.html";
+    public static final String CSS_SELECTORS = "http://selenium-app.s3-website.eu-central-1.amazonaws.com/pages/css-selectors.html";
 
 }
