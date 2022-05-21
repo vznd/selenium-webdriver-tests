@@ -141,13 +141,12 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(isBreadOptionSelected, "The 'bread' option was not selected!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void elementToBeSelectedByLocator() {
-        /*
-        STR:
-        1) Wait until bread option is selected and store result to a variable
-        2) Assert true
-         */
+        boolean isBreadOptionSelected = wait.until(ExpectedConditions.elementToBeSelected(
+                By.id("bread"))
+        );
+        Assert.assertTrue(isBreadOptionSelected, "The 'bread' option was not selected!");
     }
 
     @Test(enabled = false) // COMING SOON
