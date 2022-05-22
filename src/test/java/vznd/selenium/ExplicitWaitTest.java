@@ -238,15 +238,12 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void invisibilityOfAllElementsWebElementArgs() {
-        /*
-        STR:
-        1) Find first-name element and store it to a variable
-        2) Find last-name element and store it to a variable
-        3) Wait until invisibility of these elements and store it to a variable
-        4) Assert true
-         */
+        WebElement firstName = driver.findElement(By.id("first-name"));
+        WebElement lastName = driver.findElement(By.id("last-name"));
+        boolean isFirstAndLastNameFieldInvisible = wait.until(ExpectedConditions.invisibilityOfAllElements(firstName, lastName));
+        Assert.assertTrue(isFirstAndLastNameFieldInvisible, "The 'First name' and 'Last name' were not invisible!");
     }
 
     @Test
