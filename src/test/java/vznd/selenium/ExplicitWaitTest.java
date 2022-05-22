@@ -249,13 +249,10 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void invisibilityOfElementLocatedByLocator() {
-        /*
-        STR:
-        1) Wait until invisibility of element located by first-name id and store it to a variable
-        2) Assert true
-         */
+        boolean isFirstNameInisible = wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("first-name")));
+        Assert.assertTrue(isFirstNameInisible, "The 'First name' field was not invisible!");
     }
 
     @Test(enabled = false) // COMING SOON
