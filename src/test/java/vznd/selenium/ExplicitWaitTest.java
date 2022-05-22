@@ -309,13 +309,10 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void presenceOfElementLocated() {
-        /*
-        STR:
-        1) Wait until element with pull-button id is present and store it to a variable
-        2) Assert not null
-         */
+        WebElement pullButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("pull-button")));
+        Assert.assertNotNull(pullButton, "The 'pull' button was not present!");
     }
 
     @Test(enabled = false) // COMING SOON
