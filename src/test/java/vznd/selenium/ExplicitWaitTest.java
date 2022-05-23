@@ -168,14 +168,11 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void elementToBeClickableByElement() {
-        /*
-        STR:
-        1) Find clickable web element and store it to a variable
-        2) Wait until found element is clickable and store result to a variable
-        3) Assert not null
-         */
+        WebElement clickableButton = driver.findElement(By.id("clickable"));
+        WebElement isButtonClickable = wait.until(ExpectedConditions.elementToBeClickable(clickableButton));
+        Assert.assertNotNull(isButtonClickable, "The 'Click' button was not clickable!");
     }
 
     @Test
