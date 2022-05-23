@@ -159,13 +159,10 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(isBreadOptionSelected, "The 'bread' option was not selected!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void elementToBeClickableByLocator() {
-        /*
-        STR:
-        1) Wait until a 'clickable' element is clickable and store result to a variable
-        2) Assert not null
-         */
+        WebElement clickableButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("clickable")));
+        Assert.assertNotNull(clickableButton, "The 'Click' button was not clickable!");
     }
 
     @Test
