@@ -2,7 +2,6 @@ package vznd.selenium;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -292,14 +291,14 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertNotNull(pullButton, "The 'pull' button was not present!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void presenceOfNestedElementLocatedBy() {
-        /*
-        STR:
-        1) Find element by a 'present' id and store it to a variable
-        2) Wait until nested element with 'pull-button' id is present and store it to a variable
-        3) Assert not null
-         */
+        WebElement presentButtons = driver.findElement(By.id("present"));
+        WebElement pullButton = wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(
+                presentButtons,
+                By.id("pull-button")
+        ));
+        Assert.assertNotNull(pullButton, "The 'Pull' button was not present!");
     }
 
     @Test(enabled = false) // COMING SOON
