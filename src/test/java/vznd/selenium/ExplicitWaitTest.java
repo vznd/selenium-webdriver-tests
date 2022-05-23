@@ -187,14 +187,11 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void frameToBeAvailableAndSwitchToItByStringLocator() {
-        /*
-        STR:
-        1) Wait until frame is available by tag
-        2) Find a green-table by id
-        3) Assert not null
-         */
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("iframe"));
+        WebElement greenTable = driver.findElement(By.id("green-table"));
+        Assert.assertNotNull(greenTable, "The 'Green iFrame' was not available on the screen!");
     }
 
     @Test
