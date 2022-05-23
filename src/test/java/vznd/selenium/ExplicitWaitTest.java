@@ -193,15 +193,12 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertNotNull(greenTable, "The 'Green iFrame' was not available on the screen!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void frameToBeAvailableAndSwitchToItByElement() {
-        /*
-        STR:
-        1) Find a frame element by id and store it to a variable
-        2) Wait until frame is available by element and store result to a variable
-        3) Find green-table by id and store result to a variable
-        4) Assert not null
-         */
+        WebElement iFrame = driver.findElement(By.id("iframe"));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iFrame));
+        WebElement greenTable = driver.findElement(By.id("green-table"));
+        Assert.assertNotNull(greenTable, "The 'Green iFrame' was not available on the screen!");
     }
 
     @Test(enabled = false) // COMING SOON
