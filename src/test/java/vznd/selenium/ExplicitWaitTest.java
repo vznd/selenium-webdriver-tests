@@ -200,14 +200,11 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertNotNull(greenTable, "The 'Green iFrame' was not available on the screen!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void invisibilityOf() {
-        /*
-        STR:
-        1) Find element by first-name id and store it to a variable
-        2) Wait until invisibility of this element and store result to a variable
-        3) Assert true
-         */
+        WebElement firstNameField = driver.findElement(By.id("first-name"));
+        boolean isFirstNameFieldInvisible = wait.until(ExpectedConditions.invisibilityOf(firstNameField));
+        Assert.assertTrue(isFirstNameFieldInvisible, "The 'First name' field was visible!");
     }
 
     @Test(enabled = false) // COMING SOON
