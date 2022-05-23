@@ -261,15 +261,13 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void numberOfWindowsToBe() {
-        /*
-        STR:
-        1) Click on wait-open-button
-        2) Define expected number of windows to be opened
-        3) Wait until expected number of windows is open and store result to a variable
-        4) Assert true
-         */
+        driver.findElement(By.id("wait-open-button")).click();
+        int expectedNumberOfOpenWindows = 2;
+        boolean isExpectedNumberOfOpenWindows = wait.until(ExpectedConditions.numberOfWindowsToBe(expectedNumberOfOpenWindows));
+        Assert.assertTrue(isExpectedNumberOfOpenWindows,
+                "The number of open windows was not " + expectedNumberOfOpenWindows + "!");
     }
 
     @Test(enabled = false) // COMING SOON
