@@ -2,6 +2,7 @@ package vznd.selenium;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -177,14 +178,11 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void frameToBeAvailableAndSwitchToItByIntLocator() {
-        /*
-        STR:
-        1) Wait until frame available by index and store it to a variable
-        2) Find green-table and store it to a variable
-        3) Assert not null
-         */
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+        WebElement greenTable = driver.findElement(By.id("green-table"));
+        Assert.assertNotNull(greenTable, "The 'Green iFrame' was not available on the screen!");
     }
 
     @Test
