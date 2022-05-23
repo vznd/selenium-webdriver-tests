@@ -305,17 +305,16 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void refreshed() {
-        /*
-        STR:
-        1) Define to-refresh button and store it to a variable
-        2) Define refresh button and store it to a variable
-        3) Perform a click on refresh button
-        4) Define ExpectedConditions variable which expects that toRefreshButton is clickable and refreshed
-        5) Wait until expected condition and store it to a variable
-        6) Assert not null
-         */
+        WebElement toRefreshButton = driver.findElement(By.id("to-refresh"));
+        WebElement refreshButton = driver.findElement(By.id("refresh"));
+        refreshButton.click();
+        ExpectedCondition<WebElement> clickableToRefreshButton = ExpectedConditions.refreshed(
+                ExpectedConditions.elementToBeClickable(toRefreshButton)
+        );
+        WebElement refreshedButton = wait.until(clickableToRefreshButton);
+        Assert.assertNotNull(refreshedButton, "The 'To refresh' button was not clickable!");
     }
 
     @Test(enabled = false) // COMING SOON
