@@ -387,13 +387,12 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void titleContains() {
-        /*
-        STR:
-        1) Wait until a title contains "Explicit" and store it to a variable
-        2) Assert true
-         */
+        String expectedText = "Explicit";
+        boolean isTitleContainsExpectedText = wait.until(ExpectedConditions.titleContains(expectedText));
+        Assert.assertTrue(isTitleContainsExpectedText,
+                "The 'title' element did not contain '" + expectedText + "'!");
     }
 
     @Test(enabled = false) // COMING SOON
