@@ -405,13 +405,11 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void urlContains() {
-        /*
-        STR:
-        1) Wait until urlContains "wait" and store it to a variable
-        2) Assert true
-         */
+        String expectedText = "wait";
+        boolean isUrlContainsExpectedText = wait.until(ExpectedConditions.urlContains(expectedText));
+        Assert.assertTrue(isUrlContainsExpectedText, "The 'url' element did not contain '" + expectedText + "'!");
     }
 
     @Test(enabled = false) // COMING SOON
