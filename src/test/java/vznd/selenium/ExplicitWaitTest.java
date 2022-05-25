@@ -408,13 +408,10 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(isUrlContainsExpectedText, "The 'url' element did not contain '" + expectedText + "'!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void urlMatches() {
-        /*
-        STR:
-        1) Wait until url matches pattern "^http:\\/\\/localhost:8080" and store it to a variable
-        2) Assert true
-         */
+        boolean isUrlExpected = wait.until(ExpectedConditions.urlMatches(HTMLPath.EXPLICIT_WAIT));
+        Assert.assertTrue(isUrlExpected, "The URL was not '" + HTMLPath.EXPLICIT_WAIT + "'!");
     }
 
     @Test
