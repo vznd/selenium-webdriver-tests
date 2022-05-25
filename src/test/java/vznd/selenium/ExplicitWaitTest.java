@@ -355,13 +355,12 @@ public class ExplicitWaitTest extends BaseTest {
                 "The '" + expectedText + "' text was not present in the 'text-area' element!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void textToBePresentInElementLocated() {
-        /*
-        STR:
-        1) Wait until "am" text is present in the text-area element and store it to a variable
-        2) Assert true
-         */
+        String expectedText = "am";
+        boolean isExpectedTextPresent = wait.until(ExpectedConditions.textToBePresentInElementLocated((By.id("text-area")), expectedText));
+        Assert.assertTrue(isExpectedTextPresent,
+                "The '" + expectedText + "' text was not present in the 'text-area' element!");
     }
 
     @Test
