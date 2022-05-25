@@ -417,13 +417,10 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void urlToBe() {
-        /*
-        STR:
-        1) Wait until url is actual full url and store it to a variable
-        2) Assert true
-         */
+        boolean isUrlExpected = wait.until(ExpectedConditions.urlToBe(HTMLPath.EXPLICIT_WAIT));
+        Assert.assertTrue(isUrlExpected, "The URL was not '" + HTMLPath.EXPLICIT_WAIT + "'!");
     }
 
     @Test(enabled = false) // COMING SOON
