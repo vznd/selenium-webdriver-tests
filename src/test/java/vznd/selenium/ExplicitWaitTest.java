@@ -270,14 +270,13 @@ public class ExplicitWaitTest extends BaseTest {
                 "The number of open windows was not " + expectedNumberOfOpenWindows + "!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void presenceOfAllElementsLocatedBy() {
-        /*
-        STR:
-        1) Wait until all elements with the 'presence-button' class name are present and store them to a variable
-        2) Define expected amount of elements - store it to a variable
-        3) Assert equals
-         */
+        By by = By.className("presence-button");
+        int actualAmountOfElements  = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by)).size();
+        int expectedAmountOfElements = 3;
+        Assert.assertEquals(actualAmountOfElements, expectedAmountOfElements,
+                "The amount of 'presence' buttons was not " + expectedAmountOfElements + "!");
     }
 
     @Test
