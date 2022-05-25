@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class ExplicitWaitTest extends BaseTest {
 
@@ -207,14 +208,11 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(isFirstNameFieldInvisible, "The 'First name' field was visible!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void invisibilityOfAllElementsList() {
-        /*
-        STR:
-        1) Find elements with class name invisible and store it to a variable
-        2) Wait until invisibility of these elements and store it to a variable
-        3) Assert true
-         */
+        List<WebElement> invisibleElements = driver.findElements(By.className("invisible"));
+        boolean areAllElementsInvisible = wait.until(ExpectedConditions.invisibilityOfAllElements(invisibleElements));
+        Assert.assertTrue(areAllElementsInvisible, "The list had visible elements!");
     }
 
     @Test
