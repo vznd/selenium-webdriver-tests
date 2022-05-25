@@ -456,13 +456,10 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void visibilityOfElementLocated() {
-        /*
-        STR:
-        1) Wait until pause-button elements are visible
-        2) Assert not null
-         */
+        WebElement pauseButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("pause-button")));
+        Assert.assertNotNull(pauseButton, "The 'Pause' button was not visible!");
     }
 
     @Test(enabled = false) // COMING SOON
