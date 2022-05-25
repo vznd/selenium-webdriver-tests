@@ -337,13 +337,11 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void textToBe() {
-        /*
-        STR:
-        1) Wait until 'text-area' element text to be "I am a superhero" and store it to a variable
-        2) Assert true
-         */
+        String expectedText = "I am superhero";
+        boolean isTextMatchesExpected = wait.until(ExpectedConditions.textToBe(By.id("text-area"), expectedText));
+        Assert.assertTrue(isTextMatchesExpected, "The text of 'Text area' element was not " + expectedText + "!");
     }
 
     @Test
