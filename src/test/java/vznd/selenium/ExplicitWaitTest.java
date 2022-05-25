@@ -372,14 +372,13 @@ public class ExplicitWaitTest extends BaseTest {
                 "The '" + expectedText + "' text was not present in the value of 'text-area' element!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void textToBePresentInElementValueByElement() {
-        /*
-        STR:
-        1) Find text-area element and store it to a variable
-        2) Wait until "I" text is present in text-area and store it to a variable
-        3) Assert true
-         */
+        WebElement textArea = driver.findElement(By.id("text-area"));
+        String expectedText = "I";
+        boolean isExpectedTextPresent = wait.until(ExpectedConditions.textToBePresentInElementValue(textArea, "I"));
+        Assert.assertTrue(isExpectedTextPresent,
+                "The '" + expectedText + "' text was not present in the value of 'text-area' element!");
     }
 
     @Test
