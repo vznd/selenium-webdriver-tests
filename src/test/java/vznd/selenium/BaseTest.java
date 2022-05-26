@@ -21,7 +21,7 @@ public class BaseTest {
     }
 
     private ChromeOptions getChromeOptions() {
-        if(getEnv().equals("CIRCLE_CI")) {
+        if(getEnv().equals("GITLAB")) {
             return new ChromeOptions()
                     .addArguments("--disable-dev-shm-usage")
                     .addArguments("--headless")
@@ -31,7 +31,7 @@ public class BaseTest {
     }
 
     private String getEnv() {
-        String env = System.getenv("WIKI_ENV");
+        String env = System.getenv("ENV");
         return env == null ? "LOCAL" : env;
     }
 

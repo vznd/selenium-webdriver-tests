@@ -1,6 +1,6 @@
 # Selenium Web Driver Tests
-  
-[![CircleCI](https://circleci.com/bb/den44/selenium-webdriver-tests.svg?style=shield&circle-token=beec6688d1137f803b984f0bd3564ba6caaeeb9b)](https://app.circleci.com/pipelines/bitbucket/den44/selenium-webdriver-tests?branch=master&filter=all)
+
+[![pipeline status](https://gitlab.com/vozniuk.denys96/selenium-webdriver-tests/badges/master/pipeline.svg)](https://gitlab.com/vozniuk.denys96/selenium-webdriver-tests/-/pipelines)
 
 This repository includes usage of Selenium Web Driver methods. The latest version of Selenium is used in this project.
 
@@ -43,6 +43,11 @@ unzip chromedriver_mac64.zip
   * Move chromedriver to the `/tmp/chromedriver` location  
 ```bash
 mv ~/Downloads/chromedriver /tmp/chromedriver/
+```
+
+* Declare environment variable with a path to the chromedriver
+```bash
+export CHROMEDRIVER_FULL_PATH=/tmp/chromedriver/chromedriver
 ```
 
 2) Clone this repository  

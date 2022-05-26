@@ -1,0 +1,19 @@
+variables:
+  CHROMEDRIVER_VERSION: 102.0.5005.61
+  CHROMEDRIVER_DIR: /tmp/chromedriver/
+  CHROMEDRIVER_FULL_PATH: $CHROMEDRIVER_DIR/chromedriver
+  ENV: GITLAB
+
+test:
+  image: maven:3.8.5-openjdk-17-slim
+  before_script:
+    - chmod +x env.sh
+    - ./env.sh
+  script:
+    - mvn test
+  artifacts:
+    when: always
+    paths:
+      - target/surefire-reports/junitreports/*.xml
+    reports:
+      junit: target/surefire-reports/junitreports/*.xml
