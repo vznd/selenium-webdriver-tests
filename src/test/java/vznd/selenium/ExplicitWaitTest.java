@@ -294,13 +294,13 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertNotNull(pullButton, "The 'Pull' button was not present!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void presenceOfNestedElementsLocatedBy() {
-        /*
-        STR:
-        1) Wait until all with 'presence-button' class and 'present' parent id are present and store it to a variable
-        2) Assert not null
-         */
+        List<WebElement> presentButtons = wait.until(ExpectedConditions.presenceOfNestedElementsLocatedBy(
+                By.id("present"),
+                By.className("presence-button"))
+        );
+        Assert.assertNotNull(presentButtons, "The 'Present' buttons were not present!");
     }
 
     @Test
