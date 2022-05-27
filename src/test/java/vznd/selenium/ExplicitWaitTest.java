@@ -413,14 +413,11 @@ public class ExplicitWaitTest extends BaseTest {
         Assert.assertTrue(isUrlExpected, "The URL was not '" + HTMLPath.EXPLICIT_WAIT + "'!");
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void visibilityOf() {
-        /*
-        STR:
-        1) Find a play-button web element and store it to a variable
-        2) Wait until visibility of found element and store it to a variable
-        3) Assert not null
-         */
+        WebElement playButton = driver.findElement(By.id("play-button"));
+        WebElement visiblePlayButton = wait.until(ExpectedConditions.visibilityOf(playButton));
+        Assert.assertNotNull(visiblePlayButton, "The 'Play' button was not visible!");
     }
 
     @Test(enabled = false) // COMING SOON
