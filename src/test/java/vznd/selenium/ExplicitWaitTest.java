@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class ExplicitWaitTest extends BaseTest {
 
@@ -327,14 +328,11 @@ public class ExplicitWaitTest extends BaseTest {
          */
     }
 
-    @Test(enabled = false) // COMING SOON
+    @Test
     public void textMatches() {
-        /*
-        STR:
-        1) Define Pattern variable with pattern "[a-zA-Z]" and store it to a variable
-        2) Wait until 'text-area' element matches created pattern and store it to a variable
-        3) Assert true
-         */
+        Pattern pattern = Pattern.compile("[a-zA-Z]");
+        boolean isTextMatches = wait.until(ExpectedConditions.textMatches(By.id("text-area"), pattern));
+        Assert.assertTrue(isTextMatches, "The text of 'Text area' element did not match with [a-zA-Z] pattern!");
     }
 
     @Test
