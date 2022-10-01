@@ -5,7 +5,7 @@
 This repository includes usage of Selenium Web Driver methods. The latest version of Selenium is used in this project.
 
 The SUT is a custom website which you can find in a [selenium-app](https://github.com/vznd/selenium-app) repository. 
-This website is [hosted](http://selenium-app.s3-website.eu-central-1.amazonaws.com) with AWS S3.
+This website is [hosted](https://vznd.github.io/selenium-app/) with GitHub Pages.
 
 ## Overview
 
