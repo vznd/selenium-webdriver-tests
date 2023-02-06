@@ -1,6 +1,6 @@
 # Selenium Web Driver Tests
 
-[![pipeline status](https://gitlab.com/vozniuk.denys96/selenium-webdriver-tests/badges/master/pipeline.svg)](https://gitlab.com/vozniuk.denys96/selenium-webdriver-tests/-/pipelines)
+[![Tests](https://github.com/vznd/selenium-webdriver-tests/actions/workflows/maven.yml/badge.svg)](https://github.com/vznd/selenium-webdriver-tests/actions/workflows/maven.yml)
 
 This repository includes usage of Selenium Web Driver methods. The latest version of Selenium is used in this project.
 
