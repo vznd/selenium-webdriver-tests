@@ -21,7 +21,7 @@ public class BaseTest {
     }
 
     private ChromeOptions getChromeOptions() {
-        if(getEnv().equals("GITLAB")) {
+        if(getEnv().equals("GITHUB")) {
             return new ChromeOptions()
                     .addArguments("--disable-dev-shm-usage")
                     .addArguments("--headless")
