@@ -1,5 +1,6 @@
 package vznd.selenium;
 
+import io.qameta.allure.Description;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,6 +15,7 @@ public class FluentWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void fluentWait() {
         /*
         STR:

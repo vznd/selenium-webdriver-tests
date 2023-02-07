@@ -1,5 +1,6 @@
 package vznd.selenium;
 
+import io.qameta.allure.Description;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -231,6 +232,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void invisibilityOfElementWithText() {
         /*
         STR:
@@ -240,6 +242,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void javaScriptThrowsNoExceptions() {
         /*
         STR:
@@ -250,6 +253,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void jsReturnsValue() {
         /*
         STR:
@@ -316,6 +320,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void statelessOf() {
         /*
         STR:
@@ -419,6 +424,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void visibilityOfAllElementsList() {
         /*
         STR:
@@ -430,6 +436,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void visibilityOfAllElementsArgs() {
         /*
         STR:
@@ -442,6 +449,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void visibilityOfAllElementsLocatedBy() {
         /*
         STR:
@@ -458,6 +466,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void visibilityOfNestedElementsLocatedByLocator() {
         /*
         STR:
@@ -469,6 +478,7 @@ public class ExplicitWaitTest extends BaseTest {
     }
 
     @Test(enabled = false) // COMING SOON
+    @Description("COMING SOON")
     public void visibilityOfNestedElementsLocatedByElement() {
         /*
         STR:
