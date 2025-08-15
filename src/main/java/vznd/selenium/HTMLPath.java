@@ -10,7 +10,7 @@ public class HTMLPath {
     public static final String CLICK_AND_HOLD = "https://vznd.github.io/selenium-app/pages/click-and-hold.html";
     public static final String CONTEXT_CLICK = "https://vznd.github.io/selenium-app/pages/context-click.html";
     public static final String DOUBLE_CLICK = "https://vznd.github.io/selenium-app/pages/double-click.html";
-    public static final String MOVE_TO_ELEMENT = "https://vznd.github.io/selenium-app/pages/move-to-element.html";;
+    public static final String MOVE_TO_ELEMENT = "https://vznd.github.io/selenium-app/pages/move-to-element.html";
     public static final String KEYBOARD = "https://vznd.github.io/selenium-app/pages/keyboard.html";
     public static final String WINDOWS = "https://vznd.github.io/selenium-app/pages/windows.html";
     public static final String COOKIES = "https://vznd.github.io/selenium-app/pages/cookies.html";
